@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages & Phrases - CulturalAI Educator</title>
+    <link rel="stylesheet" href="css/educator.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon">📅</span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon">🧩</span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon">💾</span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Languages & Phrases</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <div class="section-header-content">
+                    <h2>Languages & Phrases</h2>
+                    <p>Learn essential phrases and cultural expressions from around the world.</p>
+                </div>
+                
+                <div class="language-tabs">
+                    <button class="tab-btn active" data-tab="greetings">Greetings</button>
+                    <button class="tab-btn" data-tab="courtesy">Courtesy</button>
+                    <button class="tab-btn" data-tab="cultural">Cultural Expressions</button>
+                    <button class="tab-btn" data-tab="numbers">Numbers</button>
+                </div>
+                
+                <div class="tab-content active" id="greetings">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇯🇵</div>
+                            <h3>Japanese</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">こんにちは</span>
+                                <span class="phrase-romanized">Konnichiwa</span>
+                                <span class="phrase-meaning">Hello (afternoon)</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">おはようございます</span>
+                                <span class="phrase-romanized">Ohayou gozaimasu</span>
+                                <span class="phrase-meaning">Good morning</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇳</div>
+                            <h3>Mandarin Chinese</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">你好</span>
+                                <span class="phrase-romanized">Nǐ hǎo</span>
+                                <span class="phrase-meaning">Hello</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">早上好</span>
+                                <span class="phrase-romanized">Zǎoshang hǎo</span>
+                                <span class="phrase-meaning">Good morning</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇦🇪</div>
+                            <h3>Arabic</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">السلام عليكم</span>
+                                <span class="phrase-romanized">As-salāmu ʿalaykum</span>
+                                <span class="phrase-meaning">Peace be upon you</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">أهلاً وسهلاً</span>
+                                <span class="phrase-romanized">Ahlan wa sahlan</span>
+                                <span class="phrase-meaning">Welcome</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇮🇳</div>
+                            <h3>Hindi</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">नमस्ते</span>
+                                <span class="phrase-romanized">Namaste</span>
+                                <span class="phrase-meaning">Hello/Goodbye</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">आप कैसे हैं?</span>
+                                <span class="phrase-romanized">Aap kaise hain?</span>
+                                <span class="phrase-meaning">How are you?</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇷🇺</div>
+                            <h3>Russian</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Привет</span>
+                                <span class="phrase-romanized">Privet</span>
+                                <span class="phrase-meaning">Hi (informal)</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Здравствуйте</span>
+                                <span class="phrase-romanized">Zdravstvuyte</span>
+                                <span class="phrase-meaning">Hello (formal)</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇰🇷</div>
+                            <h3>Korean</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">안녕하세요</span>
+                                <span class="phrase-romanized">Annyeonghaseyo</span>
+                                <span class="phrase-meaning">Hello</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">안녕히 가세요</span>
+                                <span class="phrase-romanized">Annyeonghi gaseyo</span>
+                                <span class="phrase-meaning">Goodbye</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="courtesy">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇯🇵</div>
+                            <h3>Japanese</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">ありがとうございます</span>
+                                <span class="phrase-romanized">Arigatou gozaimasu</span>
+                                <span class="phrase-meaning">Thank you</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">すみません</span>
+                                <span class="phrase-romanized">Sumimasen</span>
+                                <span class="phrase-meaning">Excuse me/Sorry</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇫🇷</div>
+                            <h3>French</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Merci beaucoup</span>
+                                <span class="phrase-romanized">Mer-see bo-koo</span>
+                                <span class="phrase-meaning">Thank you very much</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Excusez-moi</span>
+                                <span class="phrase-romanized">Ex-koo-zay mwa</span>
+                                <span class="phrase-meaning">Excuse me</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇩🇪</div>
+                            <h3>German</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Danke schön</span>
+                                <span class="phrase-romanized">Dan-keh shern</span>
+                                <span class="phrase-meaning">Thank you</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Entschuldigung</span>
+                                <span class="phrase-romanized">Ent-shool-di-goong</span>
+                                <span class="phrase-meaning">Excuse me</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="cultural">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇯🇵</div>
+                            <h3>Japanese</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">いただきます</span>
+                                <span class="phrase-romanized">Itadakimasu</span>
+                                <span class="phrase-meaning">Before eating (gratitude)</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">お疲れ様</span>
+                                <span class="phrase-romanized">Otsukaresama</span>
+                                <span class="phrase-meaning">Thank you for your hard work</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇮🇳</div>
+                            <h3>Hindi</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">जुगाड़</span>
+                                <span class="phrase-romanized">Jugaad</span>
+                                <span class="phrase-meaning">Creative problem-solving</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">अतिथि देवो भव</span>
+                                <span class="phrase-romanized">Atithi Devo Bhava</span>
+                                <span class="phrase-meaning">Guest is God</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇰🇷</div>
+                            <h3>Korean</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">정</span>
+                                <span class="phrase-romanized">Jeong</span>
+                                <span class="phrase-meaning">Deep emotional bond</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">눈치</span>
+                                <span class="phrase-romanized">Nunchi</span>
+                                <span class="phrase-meaning">Social awareness/intuition</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="numbers">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇳</div>
+                            <h3>Mandarin Chinese</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">一二三四五</span>
+                                <span class="phrase-romanized">Yī èr sān sì wǔ</span>
+                                <span class="phrase-meaning">1, 2, 3, 4, 5</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">六七八九十</span>
+                                <span class="phrase-romanized">Liù qī bā jiǔ shí</span>
+                                <span class="phrase-meaning">6, 7, 8, 9, 10</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇦🇪</div>
+                            <h3>Arabic</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">واحد اثنان ثلاثة</span>
+                                <span class="phrase-romanized">Wahid ithnaan thalaatha</span>
+                                <span class="phrase-meaning">1, 2, 3</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">أربعة خمسة</span>
+                                <span class="phrase-romanized">Arba'a khamsa</span>
+                                <span class="phrase-meaning">4, 5</span>
+                                <button class="play-btn">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+</body>
+</html>
+

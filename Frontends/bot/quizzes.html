@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes & Challenges - CulturalAI Educator</title>
+    <link rel="stylesheet" href="css/educator.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon">📅</span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon">🧩</span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon">💾</span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Quizzes & Challenges</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <!-- Quiz Selection Screen -->
+                <div class="quiz-selection" id="quizSelection">
+                    <div class="section-header-content">
+                        <h2>Test Your Cultural Knowledge</h2>
+                        <p>Challenge yourself with quizzes about cultures, traditions, and history from around the world.</p>
+                    </div>
+                    
+                    <div class="quiz-categories">
+                        <div class="quiz-category-card" data-category="world-cultures">
+                            <div class="category-icon">🌍</div>
+                            <h3>World Cultures</h3>
+                            <p>Test your knowledge about different cultures and their traditions</p>
+                            <div class="category-stats">
+                                <span>15 Questions</span>
+                                <span>Beginner Level</span>
+                            </div>
+                            <button class="start-quiz-btn" data-quiz="world-cultures">Start Quiz</button>
+                        </div>
+                        
+                        <div class="quiz-category-card" data-category="asian-traditions">
+                            <div class="category-icon">🏮</div>
+                            <h3>Asian Traditions</h3>
+                            <p>Explore the rich traditions and customs of Asian cultures</p>
+                            <div class="category-stats">
+                                <span>12 Questions</span>
+                                <span>Intermediate Level</span>
+                            </div>
+                            <button class="start-quiz-btn" data-quiz="asian-traditions">Start Quiz</button>
+                        </div>
+                        
+                        <div class="quiz-category-card" data-category="african-heritage">
+                            <div class="category-icon">🌍</div>
+                            <h3>African Heritage</h3>
+                            <p>Discover the diverse cultures and traditions of Africa</p>
+                            <div class="category-stats">
+                                <span>10 Questions</span>
+                                <span>Advanced Level</span>
+                            </div>
+                            <button class="start-quiz-btn" data-quiz="african-heritage">Start Quiz</button>
+                        </div>
+                        
+                        <div class="quiz-category-card" data-category="mythology">
+                            <div class="category-icon">🐉</div>
+                            <h3>World Mythology</h3>
+                            <p>Test your knowledge of myths and legends from around the globe</p>
+                            <div class="category-stats">
+                                <span>20 Questions</span>
+                                <span>Expert Level</span>
+                            </div>
+                            <button class="start-quiz-btn" data-quiz="mythology">Start Quiz</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Scores -->
+                    <div class="recent-scores">
+                        <h3>Your Recent Scores</h3>
+                        <div class="score-list">
+                            <div class="score-item">
+                                <span class="score-quiz">World Cultures</span>
+                                <span class="score-result">12/15</span>
+                                <span class="score-percentage">80%</span>
+                            </div>
+                            <div class="score-item">
+                                <span class="score-quiz">Asian Traditions</span>
+                                <span class="score-result">9/12</span>
+                                <span class="score-percentage">75%</span>
+                            </div>
+                            <div class="score-item">
+                                <span class="score-quiz">African Heritage</span>
+                                <span class="score-result">7/10</span>
+                                <span class="score-percentage">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quiz Interface -->
+                <div class="quiz-interface" id="quizInterface" style="display: none;">
+                    <div class="quiz-header">
+                        <div class="quiz-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span class="progress-text" id="progressText">Question 1 of 10</span>
+                        </div>
+                        <div class="quiz-score">
+                            <span>Score: <span id="currentScore">0</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-content">
+                        <div class="question-container">
+                            <h2 class="question-text" id="questionText">Loading question...</h2>
+                            <div class="question-image" id="questionImage" style="display: none;">
+                                <img src="" alt="Question image" id="questionImg">
+                            </div>
+                        </div>
+                        
+                        <div class="answers-container" id="answersContainer">
+                            <!-- Answer options will be dynamically inserted here -->
+                        </div>
+                        
+                        <div class="quiz-actions">
+                            <button class="quiz-btn secondary" id="prevBtn" disabled>Previous</button>
+                            <button class="quiz-btn primary" id="nextBtn" disabled>Next Question</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-timer">
+                        <span>Time: <span id="timerDisplay">00:00</span></span>
+                    </div>
+                </div>
+                
+                <!-- Quiz Results -->
+                <div class="quiz-results" id="quizResults" style="display: none;">
+                    <div class="results-header">
+                        <h2>Quiz Complete!</h2>
+                        <div class="final-score">
+                            <span class="score-number" id="finalScore">0</span>
+                            <span class="score-total">/ 10</span>
+                        </div>
+                        <div class="score-percentage" id="finalPercentage">0%</div>
+                    </div>
+                    
+                    <div class="results-breakdown">
+                        <div class="result-stat">
+                            <span class="stat-label">Correct Answers</span>
+                            <span class="stat-value" id="correctAnswers">0</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-label">Time Taken</span>
+                            <span class="stat-value" id="timeTaken">00:00</span>
+                        </div>
+                        <div class="result-stat">
+                            <span class="stat-label">Accuracy</span>
+                            <span class="stat-value" id="accuracy">0%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-actions">
+                        <button class="quiz-btn primary" id="retakeBtn">Retake Quiz</button>
+                        <button class="quiz-btn secondary" id="backToMenuBtn">Back to Menu</button>
+                        <button class="quiz-btn secondary" id="reviewBtn">Review Answers</button>
+                    </div>
+                    
+                    <div class="achievement" id="achievement" style="display: none;">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-text">
+                            <h3>Achievement Unlocked!</h3>
+                            <p id="achievementText">Cultural Explorer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+    <script>
+        // Quiz functionality
+        const quizData = {
+            'world-cultures': [
+                {
+                    question: "Which country is known for the tradition of afternoon tea?",
+                    options: ["France", "England", "Germany", "Italy"],
+                    correct: 1,
+                    explanation: "England is famous for its afternoon tea tradition, typically served between 3-4 PM."
+                },
+                {
+                    question: "What is the traditional greeting in Japan?",
+                    options: ["Handshake", "Bow", "Hug", "Wave"],
+                    correct: 1,
+                    explanation: "Bowing is the traditional form of greeting in Japan, showing respect and politeness."
+                },
+                {
+                    question: "Which festival is known as the 'Festival of Colors'?",
+                    options: ["Diwali", "Holi", "Eid", "Christmas"],
+                    correct: 1,
+                    explanation: "Holi is the Hindu festival of colors celebrated in spring, marking the victory of good over evil."
+                },
+                {
+                    question: "In which country did the tango dance originate?",
+                    options: ["Spain", "Brazil", "Argentina", "Mexico"],
+                    correct: 2,
+                    explanation: "Tango originated in Argentina in the late 19th century, particularly in Buenos Aires."
+                },
+                {
+                    question: "What is the traditional dress worn by Scottish men?",
+                    options: ["Kilt", "Toga", "Kimono", "Sari"],
+                    correct: 0,
+                    explanation: "The kilt is a traditional Scottish garment, typically worn by men for formal occasions."
+                }
+            ]
+        };
+        
+        let currentQuiz = null;
+        let currentQuestion = 0;
+        let score = 0;
+        let startTime = null;
+        let selectedAnswers = [];
+        
+        // Initialize quiz functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start quiz buttons
+            document.querySelectorAll('.start-quiz-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const quizType = this.getAttribute('data-quiz');
+                    startQuiz(quizType);
+                });
+            });
+            
+            // Quiz navigation buttons
+            document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+            document.getElementById('prevBtn').addEventListener('click', prevQuestion);
+            document.getElementById('retakeBtn').addEventListener('click', retakeQuiz);
+            document.getElementById('backToMenuBtn').addEventListener('click', backToMenu);
+        });
+        
+        function startQuiz(quizType) {
+            currentQuiz = quizData[quizType] || quizData['world-cultures'];
+            currentQuestion = 0;
+            score = 0;
+            selectedAnswers = [];
+            startTime = new Date();
+            
+            document.getElementById('quizSelection').style.display = 'none';
+            document.getElementById('quizInterface').style.display = 'block';
+            document.getElementById('quizResults').style.display = 'none';
+            
+            loadQuestion();
+        }
+        
+        function loadQuestion() {
+            const question = currentQuiz[currentQuestion];
+            document.getElementById('questionText').textContent = question.question;
+            document.getElementById('progressText').textContent = `Question ${currentQuestion + 1} of ${currentQuiz.length}`;
+            document.getElementById('progressFill').style.width = `${((currentQuestion + 1) / currentQuiz.length) * 100}%`;
+            
+            const answersContainer = document.getElementById('answersContainer');
+            answersContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const answerDiv = document.createElement('div');
+                answerDiv.className = 'answer-option';
+                answerDiv.innerHTML = `
+                    <input type="radio" name="answer" value="${index}" id="answer${index}">
+                    <label for="answer${index}">${option}</label>
+                `;
+                answersContainer.appendChild(answerDiv);
+                
+                answerDiv.addEventListener('click', function() {
+                    document.getElementById(`answer${index}`).checked = true;
+                    document.getElementById('nextBtn').disabled = false;
+                });
+            });
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').disabled = true;
+            document.getElementById('nextBtn').textContent = currentQuestion === currentQuiz.length - 1 ? 'Finish Quiz' : 'Next Question';
+        }
+        
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            if (!selectedAnswer) return;
+            
+            const answerIndex = parseInt(selectedAnswer.value);
+            selectedAnswers[currentQuestion] = answerIndex;
+            
+            if (answerIndex === currentQuiz[currentQuestion].correct) {
+                score++;
+                document.getElementById('currentScore').textContent = score;
+            }
+            
+            if (currentQuestion < currentQuiz.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+        
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+                
+                // Restore previous answer if exists
+                if (selectedAnswers[currentQuestion] !== undefined) {
+                    document.getElementById(`answer${selectedAnswers[currentQuestion]}`).checked = true;
+                    document.getElementById('nextBtn').disabled = false;
+                }
+            }
+        }
+        
+        function showResults() {
+            const endTime = new Date();
+            const timeTaken = Math.floor((endTime - startTime) / 1000);
+            const percentage = Math.round((score / currentQuiz.length) * 100);
+            
+            document.getElementById('quizInterface').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            
+            document.getElementById('finalScore').textContent = score;
+            document.getElementById('finalPercentage').textContent = `${percentage}%`;
+            document.getElementById('correctAnswers').textContent = score;
+            document.getElementById('timeTaken').textContent = formatTime(timeTaken);
+            document.getElementById('accuracy').textContent = `${percentage}%`;
+            
+            // Show achievement if score is high
+            if (percentage >= 80) {
+                const achievement = document.getElementById('achievement');
+                achievement.style.display = 'block';
+                document.getElementById('achievementText').textContent = 'Cultural Master!';
+            }
+        }
+        
+        function retakeQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            selectedAnswers = [];
+            startTime = new Date();
+            
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('quizInterface').style.display = 'block';
+            document.getElementById('currentScore').textContent = '0';
+            
+            loadQuestion();
+        }
+        
+        function backToMenu() {
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('quizInterface').style.display = 'none';
+            document.getElementById('quizSelection').style.display = 'block';
+        }
+        
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>
+

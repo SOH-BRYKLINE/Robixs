@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educator Mode - CulturalAI</title>
+    <link rel="stylesheet" href="css/educator.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="#dashboard" class="nav-link" data-section="dashboard">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tribes" class="nav-link" data-section="tribes">
+                                <span class="nav-icon">👥</span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#timelines" class="nav-link" data-section="timelines">
+                                <span class="nav-icon">📅</span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#folklore" class="nav-link" data-section="folklore">
+                                <span class="nav-icon">📚</span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#proverbs" class="nav-link" data-section="proverbs">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#languages" class="nav-link" data-section="languages">
+                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#quizzes" class="nav-link" data-section="quizzes">
+                                <span class="nav-icon">🧩</span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#saved" class="nav-link" data-section="saved">
+                                <span class="nav-icon">💾</span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#settings" class="nav-link" data-section="settings">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content-body">
+                <!-- Dashboard Section -->
+                <section class="content-section active" id="dashboard-section">
+                    <div class="dashboard-grid">
+                        <div class="stats-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-content">
+                                <h3>Learning Progress</h3>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <p>65% Complete</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-content">
+                                <h3>Achievements</h3>
+                                <p class="stat-number">12</p>
+                                <p>Badges Earned</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-content">
+                                <h3>Study Time</h3>
+                                <p class="stat-number">24h</p>
+                                <p>This Week</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-content">
+                        <h2>Continue Learning</h2>
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <div class="card-image">🏺</div>
+                                <div class="card-content">
+                                    <h3>Ancient Egyptian Culture</h3>
+                                    <p>Explore the fascinating world of pharaohs, pyramids, and hieroglyphs.</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 40%"></div>
+                                        </div>
+                                        <span>40% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-card">
+                                <div class="card-image">🎭</div>
+                                <div class="card-content">
+                                    <h3>Japanese Traditions</h3>
+                                    <p>Discover the art of tea ceremony, origami, and seasonal festivals.</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                        <span>75% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-card">
+                                <div class="card-image">🎨</div>
+                                <div class="card-content">
+                                    <h3>African Art & Crafts</h3>
+                                    <p>Learn about traditional African art forms and their cultural significance.</p>
+                                    <div class="card-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 20%"></div>
+                                        </div>
+                                        <span>20% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tribes & Ethnic Groups Section -->
+                <section class="content-section" id="tribes-section">
+                    <div class="section-header-content">
+                        <h2>Tribes & Ethnic Groups</h2>
+                        <p>Explore the diverse cultures and traditions of ethnic groups worldwide.</p>
+                    </div>
+                    <div class="content-grid">
+                        <div class="tribe-card">
+                            <div class="tribe-image">🏔️</div>
+                            <h3>Maasai People</h3>
+                            <p>Semi-nomadic ethnic group in Kenya and Tanzania known for their distinctive customs and dress.</p>
+                            <button class="learn-btn">Learn More</button>
+                        </div>
+                        <div class="tribe-card">
+                            <div class="tribe-image">🌿</div>
+                            <h3>Inuit Culture</h3>
+                            <p>Indigenous peoples of the Arctic regions with rich traditions adapted to harsh environments.</p>
+                            <button class="learn-btn">Learn More</button>
+                        </div>
+                        <div class="tribe-card">
+                            <div class="tribe-image">🌺</div>
+                            <h3>Polynesian Heritage</h3>
+                            <p>Island cultures of the Pacific with traditions of navigation, dance, and storytelling.</p>
+                            <button class="learn-btn">Learn More</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Historical Timelines Section -->
+                <section class="content-section" id="timelines-section">
+                    <div class="section-header-content">
+                        <h2>Historical Timelines</h2>
+                        <p>Journey through time and explore key cultural developments.</p>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>3000 BCE - Ancient Civilizations</h3>
+                                <p>Rise of Mesopotamian, Egyptian, and Indus Valley civilizations.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>500 BCE - Classical Period</h3>
+                                <p>Golden age of Greek philosophy, Roman expansion, and Chinese dynasties.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>1000 CE - Medieval Era</h3>
+                                <p>Islamic Golden Age, European feudalism, and African kingdoms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections would be similar with appropriate content -->
+                <section class="content-section" id="folklore-section">
+                    <div class="section-header-content">
+                        <h2>Folklore & Myths</h2>
+                        <p>Discover timeless stories that have shaped cultures across the world.</p>
+                    </div>
+                    <div class="content-grid">
+                        <div class="story-card">
+                            <div class="story-image">🐉</div>
+                            <h3>Dragon Legends</h3>
+                            <p>Explore how dragon myths vary across Eastern and Western cultures.</p>
+                            <button class="read-btn">Read Story</button>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-image">🕷️</div>
+                            <h3>Anansi Tales</h3>
+                            <p>West African trickster stories that teach wisdom through clever spider adventures.</p>
+                            <button class="read-btn">Read Story</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Placeholder sections for other navigation items -->
+                <section class="content-section" id="proverbs-section">
+                    <h2>Proverbs & Sayings</h2>
+                    <p>Wisdom from cultures around the world.</p>
+                </section>
+
+                <section class="content-section" id="languages-section">
+                    <h2>Languages & Phrases</h2>
+                    <p>Learn essential phrases from different languages.</p>
+                </section>
+
+                <section class="content-section" id="quizzes-section">
+                    <h2>Quizzes & Challenges</h2>
+                    <p>Test your cultural knowledge with interactive quizzes.</p>
+                </section>
+
+                <section class="content-section" id="saved-section">
+                    <h2>Saved Content</h2>
+                    <p>Your bookmarked articles, stories, and learning materials.</p>
+                </section>
+
+                <section class="content-section" id="settings-section">
+                    <h2>Settings</h2>
+                    <p>Customize your learning experience.</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+</body>
+</html>
+

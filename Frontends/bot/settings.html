@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - CulturalAI Educator</title>
+    <link rel="stylesheet" href="css/educator.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon">📅</span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon">🧩</span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon">💾</span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="settings.html" class="nav-link">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Settings</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <div class="settings-container">
+                    <!-- Profile Settings -->
+                    <div class="settings-section">
+                        <h2>Profile Settings</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label for="userName">Display Name</label>
+                                <input type="text" id="userName" value="Cultural Explorer" placeholder="Enter your name">
+                            </div>
+                            <div class="setting-item">
+                                <label for="userEmail">Email Address</label>
+                                <input type="email" id="userEmail" value="explorer@culturalai.com" placeholder="Enter your email">
+                            </div>
+                            <div class="setting-item">
+                                <label for="userAvatar">Profile Picture</label>
+                                <div class="avatar-upload">
+                                    <div class="avatar-preview">👤</div>
+                                    <button class="upload-btn">Change Avatar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learning Preferences -->
+                    <div class="settings-section">
+                        <h2>Learning Preferences</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label for="learningLanguage">Primary Learning Language</label>
+                                <select id="learningLanguage">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="zh">中文</option>
+                                    <option value="ja">日本語</option>
+                                    <option value="ar">العربية</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label for="difficultyLevel">Difficulty Level</label>
+                                <select id="difficultyLevel">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate" selected>Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label for="culturalRegions">Preferred Cultural Regions</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="africa" checked> Africa
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="asia" checked> Asia
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="europe"> Europe
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="americas"> Americas
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="oceania"> Oceania
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audio & Voice Settings -->
+                    <div class="settings-section">
+                        <h2>Audio & Voice Settings</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Enable Voice Input</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="voiceInput" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Enable Text-to-Speech</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="textToSpeech" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label for="voiceSpeed">Speech Speed</label>
+                                <div class="range-input">
+                                    <input type="range" id="voiceSpeed" min="0.5" max="2" step="0.1" value="1">
+                                    <span class="range-value">1.0x</span>
+                                </div>
+                            </div>
+                            <div class="setting-item">
+                                <label for="voiceVolume">Voice Volume</label>
+                                <div class="range-input">
+                                    <input type="range" id="voiceVolume" min="0" max="100" value="80">
+                                    <span class="range-value">80%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section">
+                        <h2>Notifications</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Daily Learning Reminders</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="dailyReminders" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Quiz Completion Notifications</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="quizNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>New Content Alerts</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="contentAlerts">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label for="reminderTime">Daily Reminder Time</label>
+                                <input type="time" id="reminderTime" value="18:00">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Display Settings -->
+                    <div class="settings-section">
+                        <h2>Display Settings</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label for="themeMode">Theme</label>
+                                <select id="themeMode">
+                                    <option value="light" selected>Light Mode</option>
+                                    <option value="dark">Dark Mode</option>
+                                    <option value="auto">Auto (System)</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label for="fontSize">Font Size</label>
+                                <select id="fontSize">
+                                    <option value="small">Small</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="large">Large</option>
+                                    <option value="extra-large">Extra Large</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Reduce Motion</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="reduceMotion">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>High Contrast Mode</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="highContrast">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy & Data -->
+                    <div class="settings-section">
+                        <h2>Privacy & Data</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Save Learning Progress</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="saveProgress" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Analytics & Usage Data</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="analytics" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <label class="toggle-label">
+                                    <span>Personalized Recommendations</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="recommendations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="setting-item">
+                                <button class="danger-btn">Clear All Data</button>
+                                <p class="setting-description">This will permanently delete all your progress and saved content.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Actions -->
+                    <div class="settings-section">
+                        <h2>Account</h2>
+                        <div class="settings-group">
+                            <div class="setting-item">
+                                <button class="secondary-btn">Export Data</button>
+                                <p class="setting-description">Download a copy of your learning data and progress.</p>
+                            </div>
+                            <div class="setting-item">
+                                <button class="secondary-btn">Change Password</button>
+                                <p class="setting-description">Update your account password for security.</p>
+                            </div>
+                            <div class="setting-item">
+                                <button class="danger-btn">Delete Account</button>
+                                <p class="setting-description">Permanently delete your account and all associated data.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Save Settings -->
+                    <div class="settings-actions">
+                        <button class="primary-btn" id="saveSettings">Save Changes</button>
+                        <button class="secondary-btn" id="resetSettings">Reset to Defaults</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+    <script>
+        // Settings functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved settings
+            loadSettings();
+            
+            // Range input updates
+            document.getElementById('voiceSpeed').addEventListener('input', function() {
+                document.querySelector('#voiceSpeed + .range-value').textContent = this.value + 'x';
+            });
+            
+            document.getElementById('voiceVolume').addEventListener('input', function() {
+                document.querySelector('#voiceVolume + .range-value').textContent = this.value + '%';
+            });
+            
+            // Save settings
+            document.getElementById('saveSettings').addEventListener('click', saveSettings);
+            
+            // Reset settings
+            document.getElementById('resetSettings').addEventListener('click', resetSettings);
+            
+            // Theme change
+            document.getElementById('themeMode').addEventListener('change', function() {
+                applyTheme(this.value);
+            });
+            
+            // Font size change
+            document.getElementById('fontSize').addEventListener('change', function() {
+                applyFontSize(this.value);
+            });
+            
+            // High contrast toggle
+            document.getElementById('highContrast').addEventListener('change', function() {
+                document.body.classList.toggle('high-contrast', this.checked);
+            });
+            
+            // Reduce motion toggle
+            document.getElementById('reduceMotion').addEventListener('change', function() {
+                document.body.classList.toggle('reduce-motion', this.checked);
+            });
+        });
+        
+        function loadSettings() {
+            // Load settings from localStorage
+            const settings = JSON.parse(localStorage.getItem('educatorSettings') || '{}');
+            
+            // Apply saved settings
+            if (settings.userName) document.getElementById('userName').value = settings.userName;
+            if (settings.userEmail) document.getElementById('userEmail').value = settings.userEmail;
+            if (settings.learningLanguage) document.getElementById('learningLanguage').value = settings.learningLanguage;
+            if (settings.difficultyLevel) document.getElementById('difficultyLevel').value = settings.difficultyLevel;
+            if (settings.voiceSpeed) {
+                document.getElementById('voiceSpeed').value = settings.voiceSpeed;
+                document.querySelector('#voiceSpeed + .range-value').textContent = settings.voiceSpeed + 'x';
+            }
+            if (settings.voiceVolume) {
+                document.getElementById('voiceVolume').value = settings.voiceVolume;
+                document.querySelector('#voiceVolume + .range-value').textContent = settings.voiceVolume + '%';
+            }
+            if (settings.themeMode) {
+                document.getElementById('themeMode').value = settings.themeMode;
+                applyTheme(settings.themeMode);
+            }
+            if (settings.fontSize) {
+                document.getElementById('fontSize').value = settings.fontSize;
+                applyFontSize(settings.fontSize);
+            }
+            
+            // Apply boolean settings
+            const booleanSettings = [
+                'voiceInput', 'textToSpeech', 'dailyReminders', 'quizNotifications',
+                'contentAlerts', 'reduceMotion', 'highContrast', 'saveProgress',
+                'analytics', 'recommendations'
+            ];
+            
+            booleanSettings.forEach(setting => {
+                if (settings[setting] !== undefined) {
+                    document.getElementById(setting).checked = settings[setting];
+                }
+            });
+            
+            // Apply cultural regions
+            if (settings.culturalRegions) {
+                settings.culturalRegions.forEach(region => {
+                    const checkbox = document.querySelector(`input[value="${region}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            }
+        }
+        
+        function saveSettings() {
+            const settings = {
+                userName: document.getElementById('userName').value,
+                userEmail: document.getElementById('userEmail').value,
+                learningLanguage: document.getElementById('learningLanguage').value,
+                difficultyLevel: document.getElementById('difficultyLevel').value,
+                voiceSpeed: document.getElementById('voiceSpeed').value,
+                voiceVolume: document.getElementById('voiceVolume').value,
+                themeMode: document.getElementById('themeMode').value,
+                fontSize: document.getElementById('fontSize').value,
+                reminderTime: document.getElementById('reminderTime').value,
+                
+                // Boolean settings
+                voiceInput: document.getElementById('voiceInput').checked,
+                textToSpeech: document.getElementById('textToSpeech').checked,
+                dailyReminders: document.getElementById('dailyReminders').checked,
+                quizNotifications: document.getElementById('quizNotifications').checked,
+                contentAlerts: document.getElementById('contentAlerts').checked,
+                reduceMotion: document.getElementById('reduceMotion').checked,
+                highContrast: document.getElementById('highContrast').checked,
+                saveProgress: document.getElementById('saveProgress').checked,
+                analytics: document.getElementById('analytics').checked,
+                recommendations: document.getElementById('recommendations').checked,
+                
+                // Cultural regions
+                culturalRegions: Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                    .map(cb => cb.value)
+                    .filter(value => ['africa', 'asia', 'europe', 'americas', 'oceania'].includes(value))
+            };
+            
+            localStorage.setItem('educatorSettings', JSON.stringify(settings));
+            showNotification('Settings saved successfully!', 'success');
+        }
+        
+        function resetSettings() {
+            if (confirm('Are you sure you want to reset all settings to defaults?')) {
+                localStorage.removeItem('educatorSettings');
+                location.reload();
+            }
+        }
+        
+        function applyTheme(theme) {
+            document.body.className = document.body.className.replace(/theme-\w+/g, '');
+            if (theme !== 'auto') {
+                document.body.classList.add(`theme-${theme}`);
+            } else {
+                // Apply system theme
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.body.classList.add(prefersDark ? 'theme-dark' : 'theme-light');
+            }
+        }
+        
+        function applyFontSize(size) {
+            document.body.className = document.body.className.replace(/font-size-\w+/g, '');
+            document.body.classList.add(`font-size-${size}`);
+        }
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                color: white;
+                font-weight: 500;
+                z-index: 10000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            `;
+            
+            const colors = {
+                success: '#27AE60',
+                error: '#C0392B',
+                warning: '#F39C12',
+                info: '#E67E22'
+            };
+            notification.style.backgroundColor = colors[type] || colors.info;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CulturalAI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--cream);
+            border-radius: 25px;
+            color: var(--brown);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+        
+        .blog-post {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(82, 25, 8, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(82, 25, 8, 0.15);
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--brown);
+            flex-wrap: wrap;
+        }
+        
+        .blog-category {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        
+        .blog-date {
+            color: var(--gray);
+        }
+        
+        .blog-author {
+            color: var(--brown);
+            font-weight: 600;
+        }
+        
+        .blog-excerpt {
+            color: var(--brown);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: var(--primary-green);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--orange);
+        }
+        
+        .featured-post {
+            background: var(--gradient-warm);
+            border: none;
+            color: var(--dark-brown);
+        }
+        
+        .featured-post h3 {
+            color: var(--dark-brown);
+        }
+        
+        .featured-badge {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">CulturalAI</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="explore.html" class="nav-link">Explore</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="login.html" class="nav-link btn btn-outline">Login</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Cultural Insights Blog</h1>
+                <p>Explore the latest articles on cultural history, folklore, and contemporary cultural discussions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Category Filters -->
+            <div class="blog-filters">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="history">History</button>
+                <button class="category-btn" data-category="folklore">Folklore</button>
+                <button class="category-btn" data-category="traditions">Traditions</button>
+                <button class="category-btn" data-category="modern">Modern Culture</button>
+            </div>
+
+            <!-- Featured Post -->
+            <article class="blog-post featured-post" data-category="history">
+                <div class="blog-meta">
+                    <span class="featured-badge">Featured</span>
+                    <span class="blog-category">History</span>
+                    <span class="blog-date">December 15, 2024</span>
+                    <span class="blog-author">By Dr. Sarah Chen</span>
+                </div>
+                <h3>The Silk Road: How Trade Routes Shaped Cultural Exchange</h3>
+                <div class="blog-excerpt">
+                    <p>The ancient Silk Road was more than just a trade route—it was a cultural superhighway that connected East and West for over 1,400 years. From the bustling markets of Constantinople to the jade gates of China, merchants, scholars, and pilgrims carried not just goods, but ideas, technologies, and traditions that would forever change the world.</p>
+                    <p>In this comprehensive exploration, we trace the cultural impact of the Silk Road, examining how Buddhism spread from India to China, how Islamic art influenced European design, and how culinary traditions crossed continents...</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <!-- Regular Blog Posts -->
+            <article class="blog-post" data-category="folklore">
+                <div class="blog-meta">
+                    <span class="blog-category">Folklore</span>
+                    <span class="blog-date">December 12, 2024</span>
+                    <span class="blog-author">By Amara Okafor</span>
+                </div>
+                <h3>Trickster Tales: The Universal Appeal of Clever Characters</h3>
+                <div class="blog-excerpt">
+                    <p>From Anansi the Spider in West African folklore to Coyote in Native American traditions, trickster characters appear in cultures worldwide. These clever, often mischievous figures serve as both entertainers and teachers, using wit and cunning to navigate challenges and impart wisdom.</p>
+                    <p>What makes trickster tales so universally appealing? And what can they teach us about human nature and cultural values?</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="traditions">
+                <div class="blog-meta">
+                    <span class="blog-category">Traditions</span>
+                    <span class="blog-date">December 10, 2024</span>
+                    <span class="blog-author">By Elena Volkov</span>
+                </div>
+                <h3>Coming of Age: Rituals That Mark the Transition to Adulthood</h3>
+                <div class="blog-excerpt">
+                    <p>Every culture has its own way of marking the transition from childhood to adulthood. From the Jewish Bar/Bat Mitzvah to the Maasai warrior ceremonies, these rites of passage serve crucial social and psychological functions.</p>
+                    <p>We explore how different societies celebrate this important milestone and what these traditions reveal about cultural values and expectations.</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="history">
+                <div class="blog-meta">
+                    <span class="blog-category">History</span>
+                    <span class="blog-date">December 8, 2024</span>
+                    <span class="blog-author">By Dr. Raj Patel</span>
+                </div>
+                <h3>The Library of Alexandria: Preserving Knowledge Across Cultures</h3>
+                <div class="blog-excerpt">
+                    <p>The Great Library of Alexandria was more than a repository of scrolls—it was the world's first truly international center of learning. Scholars from across the Mediterranean and beyond gathered to study, translate, and preserve the knowledge of their civilizations.</p>
+                    <p>Discover how this ancient institution pioneered cross-cultural scholarship and what lessons it offers for modern knowledge preservation.</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="modern">
+                <div class="blog-meta">
+                    <span class="blog-category">Modern Culture</span>
+                    <span class="blog-date">December 5, 2024</span>
+                    <span class="blog-author">By Marcus Rodriguez</span>
+                </div>
+                <h3>Digital Nomadism and Cultural Adaptation in the 21st Century</h3>
+                <div class="blog-excerpt">
+                    <p>The rise of remote work has created a new class of cultural travelers—digital nomads who live and work across multiple countries. This modern lifestyle presents unique opportunities and challenges for cultural exchange and adaptation.</p>
+                    <p>How are digital nomads navigating cultural differences, and what impact are they having on local communities worldwide?</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="folklore">
+                <div class="blog-meta">
+                    <span class="blog-category">Folklore</span>
+                    <span class="blog-date">December 3, 2024</span>
+                    <span class="blog-author">By Amara Okafor</span>
+                </div>
+                <h3>Dragons Across Cultures: Symbols of Power and Wisdom</h3>
+                <div class="blog-excerpt">
+                    <p>Dragons appear in mythologies worldwide, but their symbolism varies dramatically between cultures. While European dragons are often portrayed as fearsome beasts to be slain, Asian dragons represent wisdom, power, and good fortune.</p>
+                    <p>Explore the fascinating evolution of dragon mythology and what these legendary creatures reveal about different cultural worldviews.</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="traditions">
+                <div class="blog-meta">
+                    <span class="blog-category">Traditions</span>
+                    <span class="blog-date">November 30, 2024</span>
+                    <span class="blog-author">By Elena Volkov</span>
+                </div>
+                <h3>The Art of Hospitality: Welcome Traditions Around the World</h3>
+                <div class="blog-excerpt">
+                    <p>Hospitality is a universal human value, but its expression varies beautifully across cultures. From the Japanese tea ceremony to Bedouin desert hospitality, each tradition reflects deep cultural values about community, respect, and human connection.</p>
+                    <p>Discover how different cultures welcome guests and what these traditions teach us about building meaningful relationships.</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <article class="blog-post" data-category="history">
+                <div class="blog-meta">
+                    <span class="blog-category">History</span>
+                    <span class="blog-date">November 28, 2024</span>
+                    <span class="blog-author">By Dr. Sarah Chen</span>
+                </div>
+                <h3>The Spice Trade: How Flavor Changed the World</h3>
+                <div class="blog-excerpt">
+                    <p>The quest for spices drove exploration, sparked wars, and reshaped global politics for centuries. These precious seasonings were once worth more than gold and fundamentally altered cuisines, economies, and cultures worldwide.</p>
+                    <p>Journey through the aromatic history of the spice trade and discover how these tiny seeds and dried leaves changed the course of human civilization.</p>
+                </div>
+                <a href="#" class="read-more">Read Full Article →</a>
+            </article>
+
+            <!-- Pagination -->
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline" style="margin-right: 1rem;">← Previous</a>
+                <span style="margin: 0 1rem; color: var(--brown);">Page 1 of 5</span>
+                <a href="#" class="btn btn-outline">Next →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h2>Stay Updated</h2>
+            <p class="mb-4">Subscribe to our newsletter for the latest cultural insights and stories.</p>
+            <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem;">
+                <input type="email" class="form-input" placeholder="Enter your email" style="flex: 1;">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CulturalAI</h3>
+                    <p>Bridging cultures through artificial intelligence and preserving heritage for future generations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="features.html">Features</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#help">Help Center</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#facebook">Facebook</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#linkedin">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CulturalAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

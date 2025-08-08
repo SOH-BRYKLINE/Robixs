@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proverbs & Sayings - CulturalAI Educator</title>
+    <link rel="stylesheet" href="css/educator.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🎓</span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon">👥</span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon">📅</span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                                <span class="nav-icon">📚</span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon">💭</span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon">🧩</span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon">💾</span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <span class="nav-icon">⚙️</span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Proverbs & Sayings</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <div class="section-header-content">
+                    <h2>Proverbs & Sayings</h2>
+                    <p>Discover wisdom from cultures around the world through traditional proverbs and sayings.</p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌍</div>
+                        <h3>African Wisdom</h3>
+                        <div class="proverb-text">"It takes a village to raise a child"</div>
+                        <div class="proverb-meaning">Community support is essential for nurturing the young</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">African</span>
+                            <span class="proverb-theme">Community</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🏮</div>
+                        <h3>Chinese Philosophy</h3>
+                        <div class="proverb-text">"A journey of a thousand miles begins with a single step"</div>
+                        <div class="proverb-meaning">Great achievements start with small actions</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Chinese</span>
+                            <span class="proverb-theme">Perseverance</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌸</div>
+                        <h3>Japanese Wisdom</h3>
+                        <div class="proverb-text">"Fall seven times, rise eight"</div>
+                        <div class="proverb-meaning">Resilience and perseverance in the face of adversity</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Japanese</span>
+                            <span class="proverb-theme">Resilience</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🕌</div>
+                        <h3>Arabic Wisdom</h3>
+                        <div class="proverb-text">"He who knows not and knows not that he knows not is a fool"</div>
+                        <div class="proverb-meaning">Self-awareness is the beginning of wisdom</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Arabic</span>
+                            <span class="proverb-theme">Knowledge</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🏛️</div>
+                        <h3>Greek Philosophy</h3>
+                        <div class="proverb-text">"Know thyself"</div>
+                        <div class="proverb-meaning">Self-knowledge is the foundation of wisdom</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Greek</span>
+                            <span class="proverb-theme">Self-Knowledge</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌿</div>
+                        <h3>Native American</h3>
+                        <div class="proverb-text">"We do not inherit the earth from our ancestors; we borrow it from our children"</div>
+                        <div class="proverb-meaning">Environmental stewardship for future generations</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Native American</span>
+                            <span class="proverb-theme">Environment</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🕉️</div>
+                        <h3>Indian Wisdom</h3>
+                        <div class="proverb-text">"The guest is God"</div>
+                        <div class="proverb-meaning">Hospitality is a sacred duty</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Sanskrit</span>
+                            <span class="proverb-theme">Hospitality</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌺</div>
+                        <h3>Hawaiian Wisdom</h3>
+                        <div class="proverb-text">"Aloha kekahi i kekahi"</div>
+                        <div class="proverb-meaning">Love one another - the spirit of aloha</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Hawaiian</span>
+                            <span class="proverb-theme">Love</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌮</div>
+                        <h3>Mexican Wisdom</h3>
+                        <div class="proverb-text">"Camarón que se duerme, se lo lleva la corriente"</div>
+                        <div class="proverb-meaning">The shrimp that sleeps gets carried away by the current</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Mexican</span>
+                            <span class="proverb-theme">Vigilance</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🇷🇺</div>
+                        <h3>Russian Wisdom</h3>
+                        <div class="proverb-text">"Trust, but verify"</div>
+                        <div class="proverb-meaning">Be trusting but also cautious and verify facts</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Russian</span>
+                            <span class="proverb-theme">Trust</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🌍</div>
+                        <h3>Swahili Wisdom</h3>
+                        <div class="proverb-text">"Haba na haraka, haba na baraka"</div>
+                        <div class="proverb-meaning">No hurry, no blessing - patience brings rewards</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Swahili</span>
+                            <span class="proverb-theme">Patience</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <div class="proverb-icon">🏔️</div>
+                        <h3>Tibetan Wisdom</h3>
+                        <div class="proverb-text">"A single arrow is easily broken, but not ten in a bundle"</div>
+                        <div class="proverb-meaning">Unity and cooperation make us stronger</div>
+                        <div class="proverb-meta">
+                            <span class="proverb-origin">Tibetan</span>
+                            <span class="proverb-theme">Unity</span>
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <!-- Featured Collection -->
+                <div class="featured-collection">
+                    <h2>Featured Collection: Wisdom About Time</h2>
+                    <div class="collection-grid">
+                        <div class="collection-item">
+                            <div class="collection-quote">"Time is money"</div>
+                            <div class="collection-origin">English</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"Time and tide wait for no man"</div>
+                            <div class="collection-origin">English</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"El tiempo es oro"</div>
+                            <div class="collection-origin">Spanish</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"時は金なり"</div>
+                            <div class="collection-origin">Japanese</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+</body>
+</html>
+
