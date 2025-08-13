@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Assistant - CulturalAI</title>
     <link rel="stylesheet" href="css/assistant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Main Container -->
@@ -18,168 +19,167 @@
             </div>
             
             <div class="sidebar-content">
-                <div class="sidebar-section">
-                    <h4>Quick Tools</h4>
-                    <ul class="tool-list">
-                        <li class="tool-item">
-                            <button class="tool-btn" data-tool="history">
-                                <span class="tool-icon">📝</span>
-                                <span class="tool-label">History</span>
-                            </button>
-                        </li>
-                        <li class="tool-item">
-                            <button class="tool-btn" data-tool="favorites">
-                                <span class="tool-icon">⭐</span>
-                                <span class="tool-label">Favorites</span>
-                            </button>
-                        </li>
-                        <li class="tool-item">
-                            <button class="tool-btn" data-tool="language">
-                                <span class="tool-icon">🌐</span>
-                                <span class="tool-label">Language</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h4>Actions</h4>
-                    <ul class="tool-list">
-                        <li class="tool-item">
-                            <button class="tool-btn" id="clearChatBtn">
-                                <span class="tool-icon">🗑️</span>
-                                <span class="tool-label">Clear Chat</span>
-                            </button>
-                        </li>
-                        <li class="tool-item">
-                            <button class="tool-btn" onclick="window.location.href='educator.html'">
-                                <span class="tool-icon">🎓</span>
-                                <span class="tool-label">Educator Mode</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Chat Interface -->
-        <main class="chat-container">
-            <!-- Chat Header -->
-            <header class="chat-header">
-                <div class="header-left">
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <div class="assistant-info">
-                        <div class="assistant-avatar">🤖</div>
-                        <div class="assistant-details">
-                            <h2>Cultural Assistant</h2>
-                            <span class="status-indicator">
-                                <span class="status-dot online"></span>
-                                Online
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="header-right">
-                    <button class="header-btn" id="voiceToggleBtn">
-                        <span class="btn-icon">🎤</span>
-                    </button>
-                    <button class="header-btn" id="settingsBtn">
-                        <span class="btn-icon">⚙️</span>
-                    </button>
-                </div>
-            </header>
-
-            <!-- Chat Messages Area -->
-            <div class="chat-messages" id="chatMessages">
-                <!-- Welcome Message -->
-                <div class="message bot-message">
-                    <div class="message-avatar">🤖</div>
-                    <div class="message-content">
-                        <div class="message-bubble">
-                            <p>Hello! I'm your Cultural Assistant. I can help you with cultural insights, travel advice, etiquette guidance, and answer questions about traditions from around the world.</p>
-                            <p>How can I assist you today?</p>
-                        </div>
-                        <div class="message-actions">
-                            <button class="action-btn replay-btn" title="Replay audio">
-                                <span class="action-icon">🔊</span>
-                            </button>
-                            <button class="action-btn favorite-btn" title="Add to favorites">
-                                <span class="action-icon">⭐</span>
-                            </button>
-                            <span class="message-time">Just now</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bot Speaking Indicator -->
-            <div class="bot-speaking" id="botSpeaking">
-                <div class="speaking-avatar">🤖</div>
-                <div class="speaking-content">
-                    <div class="waveform">
-                        <div class="wave-bar"></div>
-                        <div class="wave-bar"></div>
-                        <div class="wave-bar"></div>
-                        <div class="wave-bar"></div>
-                        <div class="wave-bar"></div>
-                    </div>
-                    <span class="speaking-text">Assistant is speaking...</span>
-                </div>
-            </div>
-
-            <!-- User Listening Indicator -->
-            <div class="user-listening" id="userListening">
-                <div class="listening-content">
-                    <div class="listening-animation">
-                        <div class="pulse-circle"></div>
-                        <div class="pulse-circle"></div>
-                        <div class="pulse-circle"></div>
-                    </div>
-                    <span class="listening-text">Listening...</span>
-                </div>
-            </div>
-
-            <!-- Quick Suggestions -->
-            <div class="quick-suggestions" id="quickSuggestions">
-                <div class="suggestions-container">
-                    <button class="suggestion-btn" data-suggestion="Tell me about Japanese business etiquette">
-                        Tell me about Japanese business etiquette
-                    </button>
-                    <button class="suggestion-btn" data-suggestion="What are some African greeting customs?">
-                        What are some African greeting customs?
-                    </button>
-                    <button class="suggestion-btn" data-suggestion="How do I prepare for traveling to India?">
-                        How do I prepare for traveling to India?
-                    </button>
-                </div>
-            </div>
-
-            <!-- Chat Input Area -->
-            <div class="chat-input-container">
-                <div class="input-wrapper">
-                    <div class="input-group">
-                        <textarea 
-                            class="chat-input" 
-                            id="chatInput" 
-                            placeholder="Ask me about cultures, traditions, or travel advice..."
-                            rows="1"
-                        ></textarea>
-                        <button class="input-btn voice-btn" id="voiceInputBtn" title="Voice input">
-                            <span class="btn-icon">🎤</span>
-                        </button>
-                        <button class="input-btn send-btn" id="sendBtn" title="Send message">
-                            <span class="btn-icon">📤</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </main>
+    <div class="sidebar-section">
+        <h4>Quick Tools</h4>
+        <ul class="tool-list">
+            <li class="tool-item">
+                <button class="tool-btn" data-tool="history">
+                    <span class="tool-icon"><i class="fas fa-history"></i></span>
+                    <span class="tool-label">History</span>
+                </button>
+            </li>
+            <li class="tool-item">
+                <button class="tool-btn" data-tool="favorites">
+                    <span class="tool-icon"><i class="fas fa-star"></i></span>
+                    <span class="tool-label">Favorites</span>
+                </button>
+            </li>
+            <li class="tool-item">
+                <button class="tool-btn" data-tool="language">
+                    <span class="tool-icon"><i class="fas fa-language"></i></span>
+                    <span class="tool-label">Language</span>
+                </button>
+            </li>
+        </ul>
     </div>
+    
+    <div class="sidebar-section">
+        <h4>Actions</h4>
+        <ul class="tool-list">
+            <li class="tool-item">
+                <button class="tool-btn" id="clearChatBtn">
+                    <span class="tool-icon"><i class="fas fa-trash-alt"></i></span>
+                    <span class="tool-label">Clear Chat</span>
+                </button>
+            </li>
+            <li class="tool-item">
+                <button class="tool-btn" onclick="window.location.href='educator.html'">
+                    <span class="tool-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                    <span class="tool-label">Educator Mode</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+</aside>
+
+<!-- Main Chat Interface -->
+<main class="chat-container">
+    <!-- Chat Header -->
+    <header class="chat-header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="assistant-info">
+                <div class="assistant-avatar"><i class="fas fa-robot"></i></div>
+                <div class="assistant-details">
+                    <h2>Cultural Assistant</h2>
+                    <span class="status-indicator">
+                        <span class="status-dot online"></span>
+                        Online
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <button class="header-btn" id="voiceToggleBtn">
+                <span class="btn-icon"><i class="fas fa-microphone"></i></span>
+            </button>
+            <button class="header-btn" id="settingsBtn">
+                <span class="btn-icon"><i class="fas fa-cog"></i></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Chat Messages Area -->
+    <div class="chat-messages" id="chatMessages">
+        <!-- Welcome Message -->
+        <div class="message bot-message">
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="message-content">
+                <div class="message-bubble">
+                    <p>Hello! I'm your Cultural Assistant. I can help you with cultural insights, travel advice, etiquette guidance, and answer questions about traditions from around the world.</p>
+                    <p>How can I assist you today?</p>
+                </div>
+                <div class="message-actions">
+                    <button class="action-btn replay-btn" title="Replay audio">
+                        <span class="action-icon"><i class="fas fa-volume-up"></i></span>
+                    </button>
+                    <button class="action-btn favorite-btn" title="Add to favorites">
+                        <span class="action-icon"><i class="fas fa-star"></i></span>
+                    </button>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bot Speaking Indicator -->
+    <div class="bot-speaking" id="botSpeaking">
+        <div class="speaking-avatar"><i class="fas fa-robot"></i></div>
+        <div class="speaking-content">
+            <div class="waveform">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+            <span class="speaking-text">Assistant is speaking...</span>
+        </div>
+    </div>
+
+    <!-- User Listening Indicator -->
+    <div class="user-listening" id="userListening">
+        <div class="listening-content">
+            <div class="listening-animation">
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+                <div class="pulse-circle"></div>
+            </div>
+            <span class="listening-text">Listening...</span>
+        </div>
+    </div>
+
+    <!-- Quick Suggestions -->
+    <div class="quick-suggestions" id="quickSuggestions">
+        <div class="suggestions-container">
+            <button class="suggestion-btn" data-suggestion="Tell me about Japanese business etiquette">
+                Tell me about Japanese business etiquette
+            </button>
+            <button class="suggestion-btn" data-suggestion="What are some African greeting customs?">
+                What are some African greeting customs?
+            </button>
+            <button class="suggestion-btn" data-suggestion="How do I prepare for traveling to India?">
+                How do I prepare for traveling to India?
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Input Area -->
+    <div class="chat-input-container">
+        <div class="input-wrapper">
+            <div class="input-group">
+                <textarea 
+                    class="chat-input" 
+                    id="chatInput" 
+                    placeholder="Ask me about cultures, traditions, or travel advice..."
+                    rows="1"
+                ></textarea>
+                <button class="input-btn voice-btn" id="voiceInputBtn" title="Voice input">
+                    <span class="btn-icon"><i class="fas fa-microphone"></i></span>
+                </button>
+                <button class="input-btn send-btn" id="sendBtn" title="Send message">
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
 
     <!-- Language Selection Modal -->
     <div class="modal" id="languageModal">

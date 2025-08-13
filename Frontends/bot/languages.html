@@ -5,6 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languages & Phrases - CulturalAI Educator</title>
     <link rel="stylesheet" href="css/educator.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+        /* Languages & Phrases Page Styles */
+/* Consistent with CulturalAI Educator design system */
+
+/* Base Styles - Inherited from your previous design */
+:root {
+    --primary-color:  #E67E22;
+    --secondary-color:  #E67E22;
+    --accent-color:  #E67E22;
+    --background-color: #f5f7fa;
+    --sidebar-bg: #ff9800;
+    --text-color: #333;
+    --light-text: #f5f7fa;
+    --border-color: #e0e0e0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Content Body Specific Styles */
+.content-body {
+    padding: 20px;
+}
+
+.section-header-content {
+    margin-bottom: 30px;
+}
+
+.section-header-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.section-header-content p {
+    color: #666;
+    max-width: 700px;
+}
+
+/* Language Tabs */
+.language-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background-color: #e9f0f8;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Phrase Grid Layout */
+.phrase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Phrase Card Styles */
+.phrase-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.phrase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.phrase-flag {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.phrase-card h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.phrase-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.phrase-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.phrase-text {
+    font-size: 16px;
+    font-weight: 500;
+    grid-column: 1 / -1;
+}
+
+.phrase-romanized {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+.phrase-meaning {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.play-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 16px;
+    transition: var(--transition);
+    justify-self: end;
+}
+
+.play-btn:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Replace emoji icons with Font Awesome */
+.play-btn {
+    font-size: 0; /* Hide the emoji */
+}
+
+.play-btn::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f028"; /* Volume icon */
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-block;
+}
+
+/* Switch mode button icon */
+.switch-mode-btn .switch-icon {
+    font-size: 0; /* Hide the emoji */
+}
+
+.switch-mode-btn .switch-icon::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f544"; /* Robot icon */
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .phrase-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .language-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .section-header-content h2 {
+        font-size: 24px;
+    }
+    
+    .phrase-item {
+        grid-template-columns: 1fr auto;
+    }
+    
+    .phrase-meaning {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Voice Modal Styles (consistent with previous design) */
+.voice-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.voice-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.voice-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.voice-animation {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.voice-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voice-circle i {
+    color: white;
+    font-size: 24px;
+}
+
+.voice-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    animation: wave 1.5s infinite;
+    opacity: 0;
+}
+
+.wave:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.close-voice-btn {
+    padding: 10px 20px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+}
+
+.close-voice-btn:hover {
+    background-color: #e53935;
+}
+      </style>
 </head>
 <body>
     <!-- Main Container -->
@@ -12,9 +342,9 @@
         <!-- Sidebar Navigation -->
         <aside class="sidebar" id="sidebar">
             <!-- Sidebar Header -->
-            <div class="sidebar-header">
+         <div class="sidebar-header">
                 <div class="logo">
-                    <span class="logo-icon">🎓</span>
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
                     <span class="logo-text">CulturalAI Educator</span>
                 </div>
                 <button class="sidebar-toggle" id="sidebarToggle">
@@ -30,39 +360,39 @@
                 <div class="nav-section">
                     <h3 class="section-header">Learn</h3>
                     <ul class="nav-list">
-                        <li class="nav-item">
+              <li class="nav-item">
                             <a href="dashboard.html" class="nav-link">
-                                <span class="nav-icon">🏠</span>
+                                <span class="nav-icon"><i class="fas fa-home"></i></span>
                                 <span class="nav-label">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="tribesAndEthnicGroups.html" class="nav-link">
-                                <span class="nav-icon">👥</span>
+                                <span class="nav-icon"><i class="fas fa-users"></i></span>
                                 <span class="nav-label">Tribes & Ethnic Groups</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="historicalTimelines.html" class="nav-link">
-                                <span class="nav-icon">📅</span>
+                                <span class="nav-icon"><i class="fas fa-history"></i></span>
                                 <span class="nav-label">Historical Timelines</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="folkloreAndMyths.html" class="nav-link">
-                                <span class="nav-icon">📚</span>
+                             <span class="nav-icon"><i class="fas fa-book-open"></i></span>
                                 <span class="nav-label">Folklore & Myths</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="proverbs.html" class="nav-link">
-                                <span class="nav-icon">💭</span>
+                                <span class="nav-icon"><i class="fas fa-comment-dots"></i></span>
                                 <span class="nav-label">Proverbs & Sayings</span>
                             </a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a href="languages.html" class="nav-link">
-                                <span class="nav-icon">🗣️</span>
+                                <span class="nav-icon"><i class="fas fa-language"></i></span>
                                 <span class="nav-label">Languages & Phrases</span>
                             </a>
                         </li>
@@ -75,13 +405,13 @@
                     <ul class="nav-list">
                         <li class="nav-item">
                             <a href="quizzes.html" class="nav-link">
-                                <span class="nav-icon">🧩</span>
+                                <span class="nav-icon"><i class="fas fa-puzzle-piece"></i></span>
                                 <span class="nav-label">Quizzes & Challenges</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="saved.html" class="nav-link">
-                                <span class="nav-icon">💾</span>
+                                <span class="nav-icon"><i class="fas fa-save"></i></span>
                                 <span class="nav-label">Saved Content</span>
                             </a>
                         </li>
@@ -92,9 +422,9 @@
                 <div class="nav-section">
                     <h3 class="section-header">Settings</h3>
                     <ul class="nav-list">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a href="settings.html" class="nav-link">
-                                <span class="nav-icon">⚙️</span>
+                                  <span class="nav-icon"><i class="fas fa-cog"></i></span>
                                 <span class="nav-label">Settings</span>
                             </a>
                         </li>
@@ -105,7 +435,7 @@
             <!-- Voice Input Button -->
             <div class="voice-input-container">
                 <button class="voice-btn" id="voiceBtn">
-                    <span class="voice-icon">🎤</span>
+                    <span class="voice-icon"><i class="fas fa-microphone"></i></span>
                     <span class="voice-label">Voice Input</span>
                 </button>
             </div>
