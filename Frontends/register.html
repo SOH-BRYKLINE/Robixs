@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - CulturalAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .auth-container {
@@ -324,22 +328,22 @@
             <form id="register-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="first-name" class="form-label">First Name</label>
+                        <label for="first-name" class="form-label"><i class="fas fa-user"></i> First Name</label>
                         <input type="text" id="first-name" name="first-name" class="form-input" required placeholder="John">
                     </div>
                     <div class="form-group">
-                        <label for="last-name" class="form-label">Last Name</label>
+                        <label for="last-name" class="form-label"><i class="fas fa-user"></i> Last Name</label>
                         <input type="text" id="last-name" name="last-name" class="form-input" required placeholder="Doe">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label"> <i class="fas fa-envelope"></i> Email Address</label>
                     <input type="email" id="email" name="email" class="form-input" required placeholder="john.doe@example.com">
                 </div>
                 
                 <div class="form-group">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label"> <i class="fas fa-lock"></i> Password</label>
                     <input type="password" id="password" name="password" class="form-input" required placeholder="Create a strong password">
                     <div class="password-strength">
                         <div class="strength-bar">
@@ -350,13 +354,13 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <label for="confirm-password" class="form-label"> <i class="fas fa-lock"></i> Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm-password" class="form-input" required placeholder="Confirm your password">
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="country" class="form-label">Country</label>
+                        <label for="country" class="form-label"> <i class="fas fa-globe"></i> Country</label>
                         <select id="country" name="country" class="form-select" required>
                             <option value="">Select your country</option>
                             <option value="us">United States</option>
@@ -372,7 +376,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="interest" class="form-label">Primary Interest</label>
+                        <label for="interest" class="form-label"> <i class="fas fa-star"></i> Primary Interest</label>
                         <select id="interest" name="interest" class="form-select" required>
                             <option value="">Select interest</option>
                             <option value="education">Education</option>
@@ -400,12 +404,9 @@
             </div>
             
             <div class="social-login">
-                <a href="#google" class="social-btn">
-                    🔍 Google
-                </a>
-                <a href="#facebook" class="social-btn">
-                    📘 Facebook
-                </a>
+                <a href="#" class="social-btn"><i class="fab fa-google"></i> Google</a>
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#" class="social-btn"><i class="fab fa-twitter"></i> Twitter</a>
             </div>
             
             <div class="auth-footer">
@@ -513,7 +514,7 @@
                 btn.addEventListener('click', function(e) {
                     e.preventDefault();
                     const provider = this.textContent.trim().split(' ')[1];
-                    alert(`${provider} registration will be implemented with OAuth integration.`);
+                    alert(${provider} registration will be implemented with OAuth integration.);
                 });
             });
             
@@ -532,4 +533,3 @@
     </script>
 </body>
 </html>
-
