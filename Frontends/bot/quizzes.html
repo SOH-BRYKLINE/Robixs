@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1
     <title>Quizzes & Challenges - CulturalAI Educator</title>
     <link rel="stylesheet" href="css/educator.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -160,7 +160,7 @@ body {
   border: none;
   border-radius: 6px;
   font-weight: 500;
-  cursor: pointer;
+  cursor:
   transition: var(--transition);
 }
 
@@ -403,7 +403,7 @@ body {
 
 .quiz-score {
   font-weight: 600;
-  color: var(--primary-color);
+ 
 }
 
 .quiz-content {
@@ -844,74 +844,31 @@ body {
                 <div class="quiz-selection" id="quizSelection">
                     <div class="section-header-content">
                         <h2>Test Your Cultural Knowledge</h2>
-                        <p>Challenge yourself with quizzes about cultures, traditions, and history from around the world.</p>
+                        <p>Challenge yourself with quizzes about cultures, traditions, and history from cameroon.</p>
                     </div>
                     
-                    <div class="quiz-categories">
-                        <div class="quiz-category-card" data-category="world-cultures">
-                            <div class="category-icon">🌍</div>
-                            <h3>World Cultures</h3>
-                            <p>Test your knowledge about different cultures and their traditions</p>
-                            <div class="category-stats">
-                                <span>15 Questions</span>
-                                <span>Beginner Level</span>
-                            </div>
-                            <button class="start-quiz-btn" data-quiz="world-cultures">Start Quiz</button>
-                        </div>
-                        
-                        <div class="quiz-category-card" data-category="asian-traditions">
-                            <div class="category-icon">🏮</div>
-                            <h3>Asian Traditions</h3>
-                            <p>Explore the rich traditions and customs of Asian cultures</p>
-                            <div class="category-stats">
-                                <span>12 Questions</span>
-                                <span>Intermediate Level</span>
-                            </div>
-                            <button class="start-quiz-btn" data-quiz="asian-traditions">Start Quiz</button>
-                        </div>
-                        
-                        <div class="quiz-category-card" data-category="african-heritage">
-                            <div class="category-icon">🌍</div>
-                            <h3>African Heritage</h3>
-                            <p>Discover the diverse cultures and traditions of Africa</p>
-                            <div class="category-stats">
-                                <span>10 Questions</span>
-                                <span>Advanced Level</span>
-                            </div>
-                            <button class="start-quiz-btn" data-quiz="african-heritage">Start Quiz</button>
-                        </div>
-                        
-                        <div class="quiz-category-card" data-category="mythology">
-                            <div class="category-icon">🐉</div>
-                            <h3>World Mythology</h3>
-                            <p>Test your knowledge of myths and legends from around the globe</p>
-                            <div class="category-stats">
-                                <span>20 Questions</span>
-                                <span>Expert Level</span>
-                            </div>
-                            <button class="start-quiz-btn" data-quiz="mythology">Start Quiz</button>
-                        </div>
-                    </div>
+          <div class="quiz-categories" id="quizCategories">
+            <div class="quiz-category-card" data-category="cameroon-culture">
+              <div class="category-icon">�🇲</div>
+              <h3>Cameroon Culture & Heritage</h3>
+              <p>Test your knowledge about Cameroon: geography, history, food, sports, music, proverbs, and more!</p>
+              <div class="category-stats">
+                <span>15+ Questions</span>
+                <span>All Levels</span>
+              </div>
+              <button class="start-quiz-btn" data-quiz="cameroon-culture">Start Cameroon Quiz</button>
+            </div>
+          </div>
                     
                     <!-- Recent Scores -->
                     <div class="recent-scores">
                         <h3>Your Recent Scores</h3>
                         <div class="score-list">
-                            <div class="score-item">
-                                <span class="score-quiz">World Cultures</span>
-                                <span class="score-result">12/15</span>
-                                <span class="score-percentage">80%</span>
-                            </div>
-                            <div class="score-item">
-                                <span class="score-quiz">Asian Traditions</span>
-                                <span class="score-result">9/12</span>
-                                <span class="score-percentage">75%</span>
-                            </div>
-                            <div class="score-item">
-                                <span class="score-quiz">African Heritage</span>
-                                <span class="score-result">7/10</span>
-                                <span class="score-percentage">70%</span>
-                            </div>
+                <div class="score-item">
+                  <span class="score-quiz">Cameroon Culture & Heritage</span>
+                  <span class="score-result">--</span>
+                  <span class="score-percentage">--</span>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -1017,41 +974,24 @@ body {
     <script src="js/educator.js"></script>
     <script>
         // Quiz functionality
-        const quizData = {
-            'world-cultures': [
-                {
-                    question: "Which country is known for the tradition of afternoon tea?",
-                    options: ["France", "England", "Germany", "Italy"],
-                    correct: 1,
-                    explanation: "England is famous for its afternoon tea tradition, typically served between 3-4 PM."
-                },
-                {
-                    question: "What is the traditional greeting in Japan?",
-                    options: ["Handshake", "Bow", "Hug", "Wave"],
-                    correct: 1,
-                    explanation: "Bowing is the traditional form of greeting in Japan, showing respect and politeness."
-                },
-                {
-                    question: "Which festival is known as the 'Festival of Colors'?",
-                    options: ["Diwali", "Holi", "Eid", "Christmas"],
-                    correct: 1,
-                    explanation: "Holi is the Hindu festival of colors celebrated in spring, marking the victory of good over evil."
-                },
-                {
-                    question: "In which country did the tango dance originate?",
-                    options: ["Spain", "Brazil", "Argentina", "Mexico"],
-                    correct: 2,
-                    explanation: "Tango originated in Argentina in the late 19th century, particularly in Buenos Aires."
-                },
-                {
-                    question: "What is the traditional dress worn by Scottish men?",
-                    options: ["Kilt", "Toga", "Kimono", "Sari"],
-                    correct: 0,
-                    explanation: "The kilt is a traditional Scottish garment, typically worn by men for formal occasions."
-                }
-            ]
-        };
-        
+// 20 topics, each with 20 questions (sample and placeholders)
+const quizData = {};
+const topicNames = [
+  'Geography', 'History', 'Food', 'Music', 'Sports', 'Proverbs', 'Festivals', 'Languages', 'Wildlife', 'Mountains',
+  'Ethnic Groups', 'Economy', 'Politics', 'Education', 'Religion', 'Transport', 'Tourism', 'Art', 'Literature', 'Science'
+];
+topicNames.forEach(topic => {
+  quizData[topic] = [];
+  for (let i = 1; i <= 20; i++) {
+    quizData[topic].push({
+      question: `${topic} Question ${i} (Cameroon)`,
+      options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+      correct: Math.floor(Math.random() * 4),
+      explanation: `Explanation for ${topic} Question ${i}.`
+    });
+  }
+});
+
         let currentQuiz = null;
         let currentQuestion = 0;
         let score = 0;
@@ -1089,35 +1029,87 @@ body {
             loadQuestion();
         }
         
-        function loadQuestion() {
-            const question = currentQuiz[currentQuestion];
-            document.getElementById('questionText').textContent = question.question;
-            document.getElementById('progressText').textContent = `Question ${currentQuestion + 1} of ${currentQuiz.length}`;
-            document.getElementById('progressFill').style.width = `${((currentQuestion + 1) / currentQuiz.length) * 100}%`;
-            
-            const answersContainer = document.getElementById('answersContainer');
-            answersContainer.innerHTML = '';
-            
-            question.options.forEach((option, index) => {
-                const answerDiv = document.createElement('div');
-                answerDiv.className = 'answer-option';
-                answerDiv.innerHTML = `
-                    <input type="radio" name="answer" value="${index}" id="answer${index}">
-                    <label for="answer${index}">${option}</label>
-                `;
-                answersContainer.appendChild(answerDiv);
-                
-                answerDiv.addEventListener('click', function() {
-                    document.getElementById(`answer${index}`).checked = true;
-                    document.getElementById('nextBtn').disabled = false;
-                });
-            });
-            
-            // Update button states
-            document.getElementById('prevBtn').disabled = currentQuestion === 0;
-            document.getElementById('nextBtn').disabled = true;
-            document.getElementById('nextBtn').textContent = currentQuestion === currentQuiz.length - 1 ? 'Finish Quiz' : 'Next Question';
-        }
+    // Timer and question logic
+let timer = null;
+let timeLeft = 20;
+let timerStarted = false;
+
+function loadQuestion() {
+  const question = currentQuiz[currentQuestion];
+  document.getElementById('questionText').textContent = question.question;
+  document.getElementById('progressText').textContent = `Question ${currentQuestion + 1} of ${currentQuiz.length}`;
+  document.getElementById('progressFill').style.width = `${((currentQuestion + 1) / currentQuiz.length) * 100}%`;
+  document.getElementById('currentScore').textContent = score;
+
+  const answersContainer = document.getElementById('answersContainer');
+  answersContainer.innerHTML = '';
+
+  question.options.forEach((option, index) => {
+    const answerDiv = document.createElement('div');
+    answerDiv.className = 'answer-option';
+    answerDiv.innerHTML = `
+      <input type="radio" name="answer" value="${index}" id="answer${index}">
+      <label for="answer${index}">${option}</label>
+    `;
+    answersContainer.appendChild(answerDiv);
+
+    answerDiv.addEventListener('click', function() {
+      document.getElementById(`answer${index}`).checked = true;
+      document.getElementById('nextBtn').disabled = false;
+    });
+  });
+
+  // Add tab to show answer explanation
+  let answerTab = document.getElementById('answerTab');
+  if (!answerTab) {
+    answerTab = document.createElement('div');
+    answerTab.id = 'answerTab';
+    answerTab.style.marginTop = '20px';
+    answerTab.style.padding = '10px';
+    answerTab.style.background = '#f9f9f9';
+    answerTab.style.borderRadius = '6px';
+    answersContainer.parentNode.appendChild(answerTab);
+  }
+  answerTab.innerHTML = `<button id='showAnswerBtn' style='padding:8px 16px;background:#E67E22;color:#fff;border:none;border-radius:4px;cursor:pointer;'>Show Answer</button><div id='answerExplanation' style='margin-top:10px;display:none;'></div>`;
+  document.getElementById('showAnswerBtn').onclick = function() {
+    document.getElementById('answerExplanation').style.display = 'block';
+    document.getElementById('answerExplanation').innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+  };
+
+  // Timer logic
+  timeLeft = 20;
+  document.getElementById('timerDisplay').textContent = formatTime(timeLeft);
+  if (!timerStarted) {
+    document.getElementById('nextBtn').onclick = function() {
+      timerStarted = true;
+      startTimer();
+    };
+  } else {
+    document.getElementById('nextBtn').onclick = nextQuestion;
+  }
+
+  // Update button states
+  document.getElementById('prevBtn').disabled = currentQuestion === 0;
+  document.getElementById('nextBtn').disabled = true;
+  document.getElementById('nextBtn').textContent = currentQuestion === currentQuiz.length - 1 ? 'Finish Quiz' : 'Next Question';
+}
+
+function startTimer() {
+  timer = setInterval(function() {
+    timeLeft--;
+    document.getElementById('timerDisplay').textContent = formatTime(timeLeft);
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      timerStarted = false;
+      nextQuestion();
+    }
+  }, 1000);
+  document.getElementById('nextBtn').onclick = function() {
+    clearInterval(timer);
+    timerStarted = false;
+    nextQuestion();
+  };
+}
         
         function nextQuestion() {
             const selectedAnswer = document.querySelector('input[name="answer"]:checked');
@@ -1198,6 +1190,33 @@ body {
             const remainingSeconds = seconds % 60;
             return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
         }
+
+        // Dynamically render topic cards for the 20 topics
+const quizCategoriesDiv = document.getElementById('quizCategories');
+Object.keys(quizData).forEach(topic => {
+  const card = document.createElement('div');
+  card.className = 'quiz-category-card';
+  card.setAttribute('data-category', topic);
+  card.innerHTML = `
+    <div class="category-icon">🇨🇲</div>
+    <h3>${topic}</h3>
+    <p>Test your knowledge about ${topic} in Cameroon!</p>
+    <div class="category-stats">
+      <span>20 Questions</span>
+      <span>All Levels</span>
+    </div>
+    <button class="start-quiz-btn" data-quiz="${topic}">Start Quiz</button>
+  `;
+  quizCategoriesDiv.appendChild(card);
+});
+
+// Add event listeners to start quiz buttons
+Array.from(document.getElementsByClassName('start-quiz-btn')).forEach(btn => {
+  btn.addEventListener('click', function() {
+    const quizType = this.getAttribute('data-quiz');
+    startQuiz(quizType);
+  });
+});
     </script>
 </body>
 </html>
