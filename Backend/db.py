@@ -1,93 +1,110 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, request, jsonify, render_template_string
 import sqlite3
-from werkzeug.security import generate_password_hash, check_password_hash
-import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # secure session key
+DATABASE = 'database.db'
 
-DB_FILE = "users.db"
+# ---------------------------
+# Helper function to get DB
+# ---------------------------
+def get_db_connection():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row  # rows behave like dictionaries
+    return conn
 
-# Create DB if not exists
+# ---------------------------
+# Initialize Database
+# ---------------------------
 def init_db():
-    with sqlite3.connect(DB_FILE) as conn:
-        conn.execute('''
-            CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                first_name TEXT NOT NULL,
-                last_name TEXT NOT NULL,
-                email TEXT NOT NULL UNIQUE,
-                password_hash TEXT NOT NULL,
-                country TEXT,
-                interest TEXT
-            )
-        ''')
-    print("Database initialized.")
+    conn = get_db_connection()
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            message TEXT
+        );
+    ''')
+    conn.commit()
+    conn.close()
 
-@app.route("/register", methods=["POST"])
-def register():
-    first_name = request.form.get("first_name")
-    last_name = request.form.get("last_name")
-    email = request.form.get("email")
-    password = request.form.get("password")
-    confirm_password = request.form.get("confirm_password")
-    country = request.form.get("country")
-    interest = request.form.get("interest")
+# ---------------------------
+# HTML Form Template
+# ---------------------------
+HTML_FORM = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <h1>Register User</h1>
+    <form method="POST" action="/add_user">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
 
-    if password != confirm_password:
-        flash("Passwords do not match!", "error")
-        return redirect(url_for("show_register_form"))
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
 
-    password_hash = generate_password_hash(password)
+        <label>Message:</label><br>
+        <textarea name="message"></textarea><br><br>
 
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <h2>All Users</h2>
+    <ul>
+        {% for user in users %}
+            <li>{{ user['name'] }} ({{ user['email'] }}) - {{ user['message'] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+"""
+
+# ---------------------------
+# Routes
+# ---------------------------
+
+@app.route('/', methods=['GET'])
+def home():
+    conn = get_db_connection()
+    users = conn.execute("SELECT * FROM users").fetchall()
+    conn.close()
+    return render_template_string(HTML_FORM, users=users)
+
+@app.route('/add_user', methods=['POST'])
+def add_user():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    message = request.form.get('message')
+
+    if not name or not email:
+        return jsonify({"error": "Name and email are required"}), 400
+
+    conn = get_db_connection()
     try:
-        with sqlite3.connect(DB_FILE) as conn:
-            conn.execute(
-                "INSERT INTO users (first_name, last_name, email, password_hash, country, interest) VALUES (?, ?, ?, ?, ?, ?)",
-                (first_name, last_name, email, password_hash, country, interest)
-            )
-        flash("Account created successfully!", "success")
-        return redirect(url_for("login"))
+        conn.execute("INSERT INTO users (name, email, message) VALUES (?, ?, ?)", (name, email, message))
+        conn.commit()
     except sqlite3.IntegrityError:
-        flash("Email already exists!", "error")
-        return redirect(url_for("show_register_form"))
+        return jsonify({"error": "Email already exists"}), 400
+    finally:
+        conn.close()
 
-@app.route("/register", methods=["GET"])
-def show_register_form():
-    return render_template("register.html")  # You replace with your own HTML
+    return jsonify({"message": "User added successfully"})
 
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+@app.route('/users', methods=['GET'])
+def get_users():
+    conn = get_db_connection()
+    users = conn.execute("SELECT * FROM users").fetchall()
+    conn.close()
+    return jsonify([dict(row) for row in users])
 
-        with sqlite3.connect(DB_FILE) as conn:
-            cursor = conn.execute("SELECT id, password_hash FROM users WHERE email = ?", (email,))
-            user = cursor.fetchone()
-
-        if user and check_password_hash(user[1], password):
-            session["user_id"] = user[0]
-            flash("Login successful!", "success")
-            return redirect(url_for("dashboard"))
-        else:
-            flash("Invalid email or password.", "error")
-            return redirect(url_for("login"))
-
-    return render_template("login.html")  # You replace with your HTML
-
-@app.route("/dashboard")
-def dashboard():
-    if "user_id" not in session:
-        return redirect(url_for("login"))
-    return "Welcome to your dashboard!"
-
-@app.route("/logout")
-def logout():
-    session.pop("user_id", None)
-    flash("Logged out successfully.", "info")
-    return redirect(url_for("login"))
-
-if __name__ == "__main__":
-    init_db()
+# ---------------------------
+# Main entry
+# ---------------------------
+if __name__ == '__main__':
+    init_db()  # Ensure table exists before running
     app.run(debug=True)
