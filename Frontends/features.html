@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - CulturalAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" hnref="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--cream);
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--brown);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-green);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .feature-demo {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid var(--primary-green);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: center;
+                border-bottom: 1px solid var(--cream);
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo"><img src="img/Group 1.png" alt="Logo" style="margin-left:0; padding-left:0; position:left; left:-10px; width: 150px; height: 100px;"></div>
+              <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"> <i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"> <i class="fa-solid fa-circle-info"></i> About</a></li>
+                <li><a href="features.html" class="nav-link"> <i class="fa-solid fa-star"></i> Features</a></li>
+                <li><a href="explore.html" class="nav-link"> <i class="fa-solid fa-compass"></i> Explore</a></li>
+                
+                <li><a href="contact.html" class="nav-link"> <i class="fa-solid fa-house"></i> Contact</a></li>
+                <li><a href="login.html" class="nav-link btn btn-outline"> <i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Powerful AI Features</h1>
+                <p>Discover three intelligent modes designed to enhance your cultural learning experience.</p>
+               
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn" data-tab="educator"> Educator Mode</button>
+                <button class="tab-btn" data-tab="storyteller"> Storyteller Mode</button>
+                <button class="tab-btn" data-tab="assistant"> Personal Assistant</button>
+            </div>
+
+            <!-- Educator Mode -->
+            <div id="educator" class="tab-content">
+                <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                    <div>
+                        <h2>Educator Mode</h2>
+                        <p>Transform your cultural learning experience with our intelligent educator that adapts to your learning style and pace. Whether you're a student, teacher, or lifelong learner, our AI educator provides comprehensive cultural education.</p>
+                        
+                        <div class="feature-demo">
+                            <h4>Example Interaction:</h4>
+                            <p><strong>You:</strong> "Tell me about the origin of the Nso' tribe from the North West region of Cameroon."</p>
+                            <p><strong>AI Educator:</strong> "The Nso’ people migrated from Tikari in the Adamawa Region of Cameroon when there was a bloody succession after the death of Chief Tinki in 1387. Would you like to know more about how it got its name?"</p>
+                        </div>
+
+                        <ul class="feature-list">
+                            <li>Interactive lessons with adaptive difficulty</li>
+                            <li>Comprehensive cultural context and background</li>
+                            <li>Visual aids and multimedia explanations</li>
+                            <li>Progress tracking and personalized learning paths</li>
+                            <li>Quiz and assessment features</li>
+                            <li>Cross-cultural comparisons and connections</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Perfect For:</h3>
+                        <ul class="feature-list">
+                            <li>Students and researchers</li>
+                            <li>Educators and teachers</li>
+                            <li>Cultural enthusiasts</li>
+                            <li>Academic institutions</li>
+                            <li>Museum professionals</li>
+                        </ul>
+                        <div style="margin-top: 2rem;">
+                            <a href="register.html" class="btn btn-primary">Try Educator Mode</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storyteller Mode -->
+            <div id="storyteller" class="tab-content">
+                <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                    <div>
+                        <h2>Storyteller Mode</h2>
+                        <p>Immerse yourself in the rich tapestry of Cameroon's culture through captivating stories, legends, and folklore. Our AI storyteller brings ancient wisdom and cultural narratives to life with engaging, authentic storytelling.</p>
+                        
+                        <div class="feature-demo">
+                            <h4>Example Interaction:</h4>
+                            <p><strong>You:</strong> "Tell me about one of the most popular folklore in the north region of Cameroon."</p>
+                            <p><strong>AI Storyteller:</strong> "Let me share the tale of the Guere people's pride, selfishness and their neglect for tradition. Long ago, in what is now the Far North of Cameroon, there was a prosperous village named Guere. The land was fertile, cattle were fat, and people were joyful. But over time, pride and selfishness grew among the villagers—they began ignoring the old traditions, neglecting to honor the spirits of the land.
+
+                                One day, a wandering old woman came to the village, tired and..."</p>
+                        </div>
+
+                        <ul class="feature-list">
+                            <li>Authentic cultural stories and legends</li>
+                            <li>Interactive storytelling with choices</li>
+                            <li>Audio narration with cultural accents</li>
+                            <li>Visual story accompaniments</li>
+                            <li>Story customization by region or theme</li>
+                            <li>Educational context and cultural significance</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Story Categories:</h3>
+                        <ul class="feature-list">
+                            <li>Creation myths and legends</li>
+                            <li>Folk tales and fables</li>
+                            <li>Historical narratives</li>
+                            <li>Moral and wisdom stories</li>
+                            <li>Adventure and hero tales</li>
+                            <li>Cultural origin stories</li>
+                        </ul>
+                        <div style="margin-top: 2rem;">
+                            <a href="register.html" class="btn btn-primary">Explore Stories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Assistant -->
+            <div id="assistant" class="tab-content">
+                <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+                    <div>
+                        <h2>Personal Assistant Mode</h2>
+                        <p>Your intelligent cultural companion for everyday situations. Whether you're traveling, working with colleagues, or simply curious about cultural practices, our assistant provides personalized guidance and insights.</p>
+                        
+                        <div class="feature-demo">
+                            <h4>Example Interaction:</h4>
+                            <p><strong>You:</strong> "What is the traditional meal of the Bayangi tribe and how do I cook it?"</p>
+                            <p><strong>AI Assistant:</strong> "The Bayangi people of Cameroon traditionally eat Eru as their main dish. Eru is a vegetable soup made with waterleaf and okok.The cooking process involves boiling the chosen protein, adding the leafy vegetables, and simmering with other ingredients until tender and well-combined. 
+                                Here's a more detailed breakdown of the steps:
+                                1. Prepare the Protein:
+                                Boil the meat (beef or cow skin/kanda) until tender. 
+                                Add smoked fish and/or snails (if desired) and cook until done. 
+                                Remove the cooked protein from the pot and..."</p>
+                        </div>
+
+                        <ul class="feature-list">
+                            <li>Real-time cultural etiquette guidance</li>
+                            <li>Travel and business cultural tips</li>
+                            <li>Language and communication advice</li>
+                            <li>Cultural calendar and event information</li>
+                            <li>Personalized recommendations</li>
+                            <li>Cross-cultural communication strategies</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Use Cases:</h3>
+                        <ul class="feature-list">
+                            <li>International business meetings</li>
+                            <li>Travel planning and preparation</li>
+                            <li>Cultural event attendance</li>
+                            <li>Gift-giving guidance</li>
+                            <li>Social interaction tips</li>
+                            <li>Cultural sensitivity training</li>
+                        </ul>
+                        <div style="margin-top: 2rem;">
+                            <a href="register.html" class="btn btn-primary">Get Assistance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="text-center mb-4">Choose Your Experience</h2>
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-chalkboard"></i>
+                    </div>
+                    <h3>Educator</h3>
+                    <p><strong>Best for:</strong> Deep learning and cultural academic research</p>
+                    <p><strong>Style:</strong> Structured, comprehensive, analytical</p>
+                    <p><strong>Output:</strong> Lessons, explanations, assessments</p>
+                </div>
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-book-open-reader"></i>  
+                    </div>
+                    <h3>Storyteller</h3>
+                    <p><strong>Best for:</strong> Entertainment and cultural immersion</p>
+                    <p><strong>Style:</strong> Narrative, engaging, emotional</p>
+                    <p><strong>Output:</strong> Stories, legends, folklore</p>
+                </div>
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3>Assistant</h3>
+                    <p><strong>Best for:</strong> Practical guidance and quick answers</p>
+                    <p><strong>Style:</strong> Conversational, helpful, actionable</p>
+                    <p><strong>Output:</strong> Tips, advice, recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Ready to Experience All Three Modes?</h2>
+            <p class="mb-4">Start your free trial and discover which mode resonates with your learning style.</p>
+            <a href="register.html" class="btn btn-primary" style="margin-right: 1rem;">Start Free Trial</a>
+            <a href="explore.html" class="btn btn-secondary">See Examples</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CulturalAI</h3>
+                    <p>Bridging cultures through artificial intelligence and preserving heritage for future generations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="features.html">Features</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#help">Help Center</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#facebook">Facebook</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#linkedin">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CulturalAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

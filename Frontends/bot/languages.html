@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages & Phrases - CulturalAI Educator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #863d08;
+    --secondary-color: #863d08;
+    --accent-color: #863d08;
+    --background-color: #f5f7fa;
+    --sidebar-bg:#863d08;
+    --text-color: #333;
+    --light-text: #f5f7fa;
+    --border-color: #e0e0e0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            color: var(--light-text);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+        }
+        
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar-toggle {
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+        }
+        
+        .sidebar-nav {
+            flex-grow: 1;
+        }
+        
+        .nav-section {
+            margin-bottom: 20px;
+        }
+        
+        .section-header {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-item {
+            margin-bottom: 5px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: var(--light-text);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        
+        .nav-link:hover, .nav-item.active .nav-link {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-icon {
+            font-size: 18px;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        /* Switch Mode Button */
+        .switch-mode-btn {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .switch-mode-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .switch-icon {
+            margin-right: 8px;
+        }
+
+        /* Voice Input Button */
+        .voice-input-container {
+            margin-top: auto;
+            text-align: center;
+        }
+        
+        .voice-btn {
+            background-color: var(--light-text);
+            color: var(--text-color);
+            border: none;
+            padding: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            transition: var(--transition);
+        }
+        
+        .voice-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .voice-icon {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        
+        .voice-label {
+            font-weight: 500;
+        }
+
+        /* Languages & Phrases Page Specific Styles */
+        .content-body {
+            padding: 20px;
+        }
+
+        .section-header-content {
+            margin-bottom: 30px;
+        }
+
+        .section-header-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .section-header-content p {
+            color: #666;
+            max-width: 700px;
+        }
+
+        .language-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 16px;
+            background-color: transparent;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            background-color: #e9f0f8;
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .phrase-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .phrase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .phrase-flag {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .phrase-card h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .phrase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .phrase-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .phrase-text {
+            font-size: 16px;
+            font-weight: 500;
+            grid-column: 1 / -1;
+        }
+
+        .phrase-romanized {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .phrase-meaning {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .play-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary-color);
+            font-size: 16px;
+            transition: var(--transition);
+            justify-self: end;
+        }
+
+        .play-btn:hover {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        /* Replace emoji icons with Font Awesome */
+        .play-btn::before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f028";
+            font-weight: 900;
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .play-btn span {
+            display: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+            .phrase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-history"></i></span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-book-open"></i></span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-comment-dots"></i></span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-language"></i></span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-puzzle-piece"></i></span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-save"></i></span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="settings.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-cog"></i></span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon"><i class="fas fa-microphone"></i></span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Languages & Phrases</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon"><i class="fas fa-robot"></i></span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="section-header-content">
+                    <h2>Languages & Phrases</h2>
+                    <p>Learn essential phrases and cultural expressions from different Cameroonian languages.</p>
+                </div>
+                
+                <div class="language-tabs">
+                    <button class="tab-btn active" data-tab="greetings">Greetings</button>
+                    <button class="tab-btn" data-tab="courtesy">Courtesy</button>
+                    <button class="tab-btn" data-tab="cultural">Cultural Expressions</button>
+                    <button class="tab-btn" data-tab="numbers">Numbers</button>
+                </div>
+                
+                <div class="tab-content active" id="greetings">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>French</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Bonjour</span>
+                                <span class="phrase-romanized">Bon-jour</span>
+                                <span class="phrase-meaning">Hello / Good day</span>
+                                <button class="play-btn" data-text="Bonjour" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Bonsoir</span>
+                                <span class="phrase-romanized">Bon-swar</span>
+                                <span class="phrase-meaning">Good evening</span>
+                                <button class="play-btn" data-text="Bonsoir" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>English</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Hello</span>
+                                <span class="phrase-romanized">He-llo</span>
+                                <span class="phrase-meaning">Hello</span>
+                                <button class="play-btn" data-text="Hello" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Good morning</span>
+                                <span class="phrase-romanized">Guud mor-ning</span>
+                                <span class="phrase-meaning">Good morning</span>
+                                <button class="play-btn" data-text="Good morning" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Cameroonian Pidgin English</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">How di body?</span>
+                                <span class="phrase-romanized">How dee bo-dee</span>
+                                <span class="phrase-meaning">How are you?</span>
+                                <button class="play-btn" data-text="How di body?" data-lang="en-GB"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">A deh fine</span>
+                                <span class="phrase-romanized">Ah deh fine</span>
+                                <span class="phrase-meaning">I am fine</span>
+                                <button class="play-btn" data-text="A deh fine" data-lang="en-GB"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Bulu</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Mbolé</span>
+                                <span class="phrase-romanized">M-bo-lay</span>
+                                <span class="phrase-meaning">Hello (greeting of peace)</span>
+                                <button class="play-btn" data-text="Mbolé" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Nde fe?</span>
+                                <span class="phrase-romanized">N-day fay</span>
+                                <span class="phrase-meaning">How are you?</span>
+                                <button class="play-btn" data-text="Nde fe?" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Duala</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Kaba nde?</span>
+                                <span class="phrase-romanized">Ka-ba n-day</span>
+                                <span class="phrase-meaning">How are you?</span>
+                                <button class="play-btn" data-text="Kaba nde?" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Mina lombe nde?</span>
+                                <span class="phrase-romanized">Mina lom-bay n-day</span>
+                                <span class="phrase-meaning">Where are you going?</span>
+                                <button class="play-btn" data-text="Mina lombe nde?" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Fulfulde</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Jam waali?</span>
+                                <span class="phrase-romanized">Jam wa-li</span>
+                                <span class="phrase-meaning">Good morning</span>
+                                <button class="play-btn" data-text="Jam waali?" data-lang="ha-NG"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Jam na?</span>
+                                <span class="phrase-romanized">Jam na</span>
+                                <span class="phrase-meaning">Are you well?</span>
+                                <button class="play-btn" data-text="Jam na?" data-lang="ha-NG"><span>🔊</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="courtesy">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>French</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Merci</span>
+                                <span class="phrase-romanized">Mer-see</span>
+                                <span class="phrase-meaning">Thank you</span>
+                                <button class="play-btn" data-text="Merci" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">S'il vous plaît</span>
+                                <span class="phrase-romanized">Seel voo play</span>
+                                <span class="phrase-meaning">Please</span>
+                                <button class="play-btn" data-text="S'il vous plaît" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>English</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Thank you</span>
+                                <span class="phrase-romanized">Th-ank yoo</span>
+                                <span class="phrase-meaning">Thank you</span>
+                                <button class="play-btn" data-text="Thank you" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Excuse me</span>
+                                <span class="phrase-romanized">Ex-cuez me</span>
+                                <span class="phrase-meaning">Excuse me</span>
+                                <button class="play-btn" data-text="Excuse me" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Cameroonian Pidgin English</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Tenki</span>
+                                <span class="phrase-romanized">Ten-kee</span>
+                                <span class="phrase-meaning">Thank you</span>
+                                <button class="play-btn" data-text="Tenki" data-lang="en-GB"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Sori</span>
+                                <span class="phrase-romanized">So-ree</span>
+                                <span class="phrase-meaning">Sorry</span>
+                                <button class="play-btn" data-text="Sori" data-lang="en-GB"><span>🔊</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="cultural">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Bulu</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">A kembé</span>
+                                <span class="phrase-romanized">Ah kem-bay</span>
+                                <span class="phrase-meaning">I agree / That's right</span>
+                                <button class="play-btn" data-text="A kembé" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Nnem ékôé</span>
+                                <span class="phrase-romanized">N-nem ay-koh-ay</span>
+                                <span class="phrase-meaning">My heart is at rest (a sign of peace)</span>
+                                <button class="play-btn" data-text="Nnem ékôé" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Duala</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Eyal'a mbu</span>
+                                <span class="phrase-romanized">Ay-yal a m-boo</span>
+                                <span class="phrase-meaning">New year / Happy New Year</span>
+                                <button class="play-btn" data-text="Eyal'a mbu" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Loba la</span>
+                                <span class="phrase-romanized">Lo-ba la</span>
+                                <span class="phrase-meaning">Thank God / Praise God</span>
+                                <button class="play-btn" data-text="Loba la" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>Fulfulde</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Bismillaahi</span>
+                                <span class="phrase-romanized">Bis-mil-laa-hee</span>
+                                <span class="phrase-meaning">In the name of God (before eating)</span>
+                                <button class="play-btn" data-text="Bismillaahi" data-lang="ha-NG"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">Hokku yam haala</span>
+                                <span class="phrase-romanized">Ho-ku yam haa-la</span>
+                                <span class="phrase-meaning">Give me good news</span>
+                                <button class="play-btn" data-text="Hokku yam haala" data-lang="ha-NG"><span>🔊</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="numbers">
+                    <div class="phrase-grid">
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>French</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">un deux trois</span>
+                                <span class="phrase-romanized">uhn duh twah</span>
+                                <span class="phrase-meaning">1, 2, 3</span>
+                                <button class="play-btn" data-text="un deux trois" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">quatre cinq six</span>
+                                <span class="phrase-romanized">ka-truh sahnk seess</span>
+                                <span class="phrase-meaning">4, 5, 6</span>
+                                <button class="play-btn" data-text="quatre cinq six" data-lang="fr-FR"><span>🔊</span></button>
+                            </div>
+                        </div>
+                        
+                        <div class="phrase-card">
+                            <div class="phrase-flag">🇨🇲</div>
+                            <h3>English</h3>
+                            <div class="phrase-item">
+                                <span class="phrase-text">one two three</span>
+                                <span class="phrase-romanized">wun too three</span>
+                                <span class="phrase-meaning">1, 2, 3</span>
+                                <button class="play-btn" data-text="one two three" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                            <div class="phrase-item">
+                                <span class="phrase-text">four five six</span>
+                                <span class="phrase-romanized">for five six</span>
+                                <span class="phrase-meaning">4, 5, 6</span>
+                                <button class="play-btn" data-text="four five six" data-lang="en-US"><span>🔊</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to the clicked tab and corresponding content
+                    tab.classList.add('active');
+                    const targetTab = tab.getAttribute('data-tab');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Speech Synthesis functionality
+        if ('speechSynthesis' in window) {
+            function speakText(text, lang) {
+                // Cancel any previous speech
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang;
+                
+                // Set voice for more accurate pronunciation
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    const voice = voices.find(v => v.lang.startsWith(lang)) || voices[0];
+                    utterance.voice = voice;
+                }
+                
+                window.speechSynthesis.speak(utterance);
+            }
+
+            // Set up click listeners once voices are loaded
+            const setupSpeechListeners = () => {
+                const playButtons = document.querySelectorAll('.play-btn');
+                playButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const text = button.getAttribute('data-text');
+                        const lang = button.getAttribute('data-lang') || 'en-US';
+                        speakText(text, lang);
+                    });
+                });
+            };
+
+            // Listen for voices to be loaded, then set up the listeners
+            if (window.speechSynthesis.onvoiceschanged !== undefined) {
+                window.speechSynthesis.onvoiceschanged = setupSpeechListeners;
+            } else {
+                // Fallback for browsers where voices might already be loaded
+                setupSpeechListeners();
+            }
+        } else {
+            console.warn("Web Speech API is not supported in this browser.");
+            // Hide the play buttons if the API is not supported
+            document.querySelectorAll('.play-btn').forEach(button => {
+                button.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

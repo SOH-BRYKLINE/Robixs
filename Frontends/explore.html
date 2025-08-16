@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - CulturalAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <style>
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--cream);
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--brown);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn:hover {
+            color: var(--primary-green);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .story-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(82, 25, 8, 0.15);
+        }
+        
+        .story-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--brown);
+        }
+        
+        .story-tag {
+            background: var(--cream);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        
+        .fact-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-green);
+        }
+        
+        .fact-category {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .proverb-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 2px solid var(--cream);
+            transition: all 0.3s ease;
+        }
+        
+        .proverb-card:hover {
+            border-color: var(--primary-green);
+        }
+        
+        .proverb-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--brown);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .proverb-origin {
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .proverb-meaning {
+            color: var(--brown);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: center;
+                border-bottom: 1px solid var(--cream);
+                border-right: none;
+            }
+            
+            .story-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo"><img src="img/Group 1.png" alt="Logo" style="margin-left:0; padding-left:0; position:left; left:-10px; width: 150px; height: 100px;"></div>
+           <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link"> <i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"> <i class="fa-solid fa-circle-info"></i> About</a></li>
+                <li><a href="features.html" class="nav-link"> <i class="fa-solid fa-star"></i> Features</a></li>
+                <li><a href="explore.html" class="nav-link"> <i class="fa-solid fa-compass"></i> Explore</a></li>
+                <li><a href="contact.html" class="nav-link"> <i class="fa-solid fa-house"></i> Contact</a></li>
+                <li><a href="login.html" class="nav-link btn btn-outline"> <i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Explore Cultural Treasures</h1>
+                <p>Discover stories, facts, and wisdom from cultures around Cameroon</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="section">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn" data-tab="stories"> Sample Stories</button>
+                <button class="tab-btn" data-tab="facts"> Cultural Facts</button>
+                <button class="tab-btn" data-tab="proverbs"> Proverbs & Sayings</button>
+            </div>
+
+            <!-- Sample Stories -->
+            <div id="stories" class="tab-content">
+                <h2 class="text-center mb-4">Sample Stories</h2>
+                <p class="text-center mb-4">Immerse yourself in captivating tales from different cultures that have been passed down through generations.</p>
+                
+                <div class="story-card">
+                    <div class="story-meta">
+                        <span class="story-tag">Nso Tribe</span>
+                        <span class="story-tag">Traditions</span>
+                        <span class="story-tag">Religious Belief</span>
+                    </div>
+                    <h3>The JUJUs</h3>
+                    <p>The Jujus, masked spirits,are an important part of Nso culture.( The word"Juju" can also refer to some type of magic) Jujus come out on important occasions....</p>
+                    <p><em>This belief helps us to understand the Nso culture.</em></p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-meta">
+                        <span class="story-tag">Bamun Tribe</span>
+                        <span class="story-tag">Legend</span>
+                        <span class="story-tag">Origins</span>
+                    </div>
+                    <h3>The Origins of the Bamoun</h3>
+                    <p>The Bamoun people of Cameroon trace thier origins according to legends to the Tikar Kingdom, specifically to a migration from the Tikar Plain led by the warrior Nchare Yen in the late 14th century...</p>
+                    <p><em>This legend shows the creation of the Bamun tribe and thier Migration from the Tikar plain to the West part of Cameroon.</em></p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-meta">
+                        <span class="story-tag">Bamileke</span>
+                        <span class="story-tag">Culture</span>
+                        <span class="story-tag">Traditional beliefs</span>
+                    </div>
+                    <h3>Ancestor Veneration</h3>
+                    <p>A central part of their traditional beleifs is the veneration of ancestor, who are seen as intermediaries betweem the living and the divine...</p>
+                    <p><em>This Bamileke belief showcases the respect and the importances of ancestors in the Bamileke culture and beliefs.</em></p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-meta">
+                        <span class="story-tag">Bassa Tribe</span>
+                        <span class="story-tag">Myth</span>
+                        <span class="story-tag">Legends</span>
+                    </div>
+                    <h3>The origins of the Bassa Tribe</h3>
+                    <p>this myth suggests that their ancestors, the Bassa'a Mpoo-Bati, originated in ancient Eygpt and Migrated South...</p>
+                    <p><em>This myth let us discover the origin of the Bassa people.</em></p>
+                    <a href="#" class="btn btn-outline">Read Full Story</a>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="register.html" class="btn btn-primary">Access Full Story Library</a>
+                </div>
+            </div>
+
+            <!-- Cultural Facts -->
+            <div id="facts" class="tab-content">
+                <h2 class="text-center mb-4">Cultural Facts</h2>
+                <p class="text-center mb-4">Discover fascinating insights about traditions, customs, and practices from Cameroon.</p>
+                
+                <div class="grid grid-2">
+                    <div>
+                        <div class="fact-item">
+                            <div class="fact-category">Food Culture</div>
+                            <h4>Nkui</h4>
+                            <p>Nkui is a popular Bamileke traditional dish, a sticky sauce made from back of tree, often cooked to celebrate special occasions like child's birth.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Architecture</div>
+                            <h4>Two Headed Snake </h4>
+                            <p>The two headed snake, a known architecture and a powerful symbol in Bamun culture, represents the dual power of the king and their ability to be strong on all fronts.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Language</div>
+                            <h4>Bamileke Language</h4>
+                            <p>The Bamileke people of Cameroon speak a variety of  languages, all belonging to the broader category of Grassfeilds languages. These languages are part of the Southern Bantiod branch of the Niger-Congo language family. Some of the most prominent Bamileke languages include Ghomala, Fe'fe, Yemba, Medumba and Kwa.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Festivals</div>
+                            <h4>The Nguon Festival</h4>
+                            <p>An important tradition is the Nguon festival, a celebration where the king is put on trial by his people, a practice beleived to have originated from the Nguon owners who ensured good food supply and reported grievances during harvest time .</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="fact-item">
+                            <div class="fact-category">Art & Craft</div>
+                            <h4>The Bamileke Craftmanship</h4>
+                            <p>Bamileke art is renowned for its intricate designs and vibrant colors. They are particularly known for their wooden Masks, which are used in ceremonies to represent spirits of ancestors and deities. Other notable crafts include pottery, beadwork, and woven textiles.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Music and Dance</div>
+                            <h4>Music in the Nso </h4>
+                            <p>Music and Dance are intergral parts of Nso culture, with various dance groups performing to traditional music, often accompanied by drums and xylophones.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Social Customs</div>
+                            <h4>Social Structure</h4>
+                            <p>The Bassa are traditionally organized into independent clans with a lineage-based system, each with a chief. They have a strong sense of community and celebrate important occasions with rituals, dancing and feasting.</p>
+                        </div>
+
+                        <div class="fact-item">
+                            <div class="fact-category">Spirituality</div>
+                            <h4>Totem</h4>
+                            <p>Totems are used in ceremonies, where family members swear they were not involved in the death of a loved one, with the belief that the totem will trap the spirit of a muderer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="register.html" class="btn btn-primary">Explore More Facts</a>
+                </div>
+            </div>
+
+            <!-- Proverbs & Sayings -->
+            <div id="proverbs" class="tab-content">
+                <h2 class="text-center mb-4">Proverbs & Sayings</h2>
+                <p class="text-center mb-4">Wisdom from Cameroon captured in timeless sayings and proverbs.</p>
+                
+                <div class="grid grid-2">
+                    <div class="proverb-card">
+                        <div class="proverb-text">"Many have mouths but less have ears."</div>
+                        <div class="proverb-origin">Bamileke Proverb</div>
+                        <div class="proverb-meaning">This proverb highlights the importance of listening over speaking. .</div>
+                    </div>
+
+                    <div class="proverb-card">
+                        <div class="proverb-text">"A man who fixes his own spear, saves himself from fighting over thrown meat."</div>
+                        <div class="proverb-origin">Nso Proverb</div>
+                        <div class="proverb-meaning">This proverb emphasizes self-reliance and preparedness, it promotes independence and hard work as way to avoid conflict </div>
+                    </div>
+
+                    <div class="proverb-card">
+                        <div class="proverb-text">"If someone is better than you admit it."</div>
+                        <div class="proverb-origin">Bamoun Proverb</div>
+                        <div class="proverb-meaning">This proverb emphasizes on the fact you should be humble and avoid jelousy.</div>
+                    </div>
+
+                    <div class="proverb-card">
+                        <div class="proverb-text">"Little by little, the bird makes it's nest."</div>
+                        <div class="proverb-origin">Ewondo Proverb</div>
+                        <div class="proverb-meaning">It proverb is a call for patience and persistence. it means that great accomplishments are not acheived all at once but are the result of small,consistent effoet over time.</div>
+                    </div>
+
+                    <div class="proverb-card">
+                        <div class="proverb-text">"When the winds of change blow, some people build walls and others build windmills."</div>
+                        <div class="proverb-origin">Chinese Proverb</div>
+                        <div class="proverb-meaning">This proverb contrasts two approaches to change: resistance (building walls) versus adaptation and opportunity-seeking (building windmills). It encourages embracing change as a source of energy and progress.</div>
+                    </div>
+
+                    <div class="proverb-card">
+                        <div class="proverb-text">"The river that survives is the one that bends."</div>
+                        <div class="proverb-origin">Bassa Proverb</div>
+                        <div class="proverb-meaning">This wisdom teaches the importance of flexibility and adaptation. Like a river that flows around obstacles rather than fighting them, people who adapt to circumstances are more likely to endure and thrive.</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="register.html" class="btn btn-primary">Discover More Wisdom</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h2>Ready to Dive Deeper?</h2>
+            <p class="mb-4">Join our community and access thousands of stories, facts, and wisdom from cultures in Cameroon.</p>
+            <a href="register.html" class="btn btn-primary" style="margin-right: 1rem;">Start Exploring</a>
+            <a href="features.html" class="btn btn-secondary">See All Features</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CulturalAI</h3>
+                    <p>Bridging cultures through artificial intelligence and preserving heritage for future generations.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About Us</a>
+                    <a href="features.html">Features</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="blog.html">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="#help">Help Center</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <a href="#facebook">Facebook</a>
+                    <a href="#twitter">Twitter</a>
+                    <a href="#instagram">Instagram</a>
+                    <a href="#linkedin">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CulturalAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
