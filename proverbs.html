@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proverbs & Sayings - CulturalAI Educator</title>
+    <link rel="stylesheet" href="css/educator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Proverbs & Sayings Page Styles */
+/* Consistent with your CulturalAI Educator design system */
+
+/* Base Styles - Inherited from your previous design */
+:root {
+    --primary-color: #863d08;
+    --secondary-color: #863d08;
+    --accent-color: #863d08;
+    --background-color: #f5f7fa;
+    --sidebar-bg:#863d08;
+    --text-color: #333;
+    --light-text: #f5f7fa;
+    --border-color: #e0e0e0;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Content Body Specific Styles */
+.content-body {
+    padding: 20px;
+}
+
+.section-header-content {
+    margin-bottom: 30px;
+}
+
+.section-header-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.section-header-content p {
+    color: #666;
+    max-width: 700px;
+}
+
+/* Proverbs Grid Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Proverb Card Styles */
+.proverb-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.proverb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.proverb-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.proverb-card h3 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.proverb-text {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.proverb-meaning {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 4px 4px 0;
+}
+
+.proverb-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.proverb-origin, .proverb-theme {
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+.proverb-origin {
+    background-color: #e3f2fd;
+    color: var(--primary-color);
+}
+
+.proverb-theme {
+    background-color: #e8f5e9;
+    color: var(--success-color);
+}
+
+.explore-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.explore-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Featured Collection Styles */
+.featured-collection {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.featured-collection h2 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.collection-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.collection-quote {
+    font-style: italic;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.collection-origin {
+    font-size: 12px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header-content h2 {
+        font-size: 24px;
+    }
+}
+
+/* Replace emoji icons with Font Awesome */
+.proverb-icon {
+    font-size: 0; /* Hide the emoji text */
+}
+
+.proverb-icon::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 32px;
+    display: block;
+}
+
+/* Set specific icons for each proverb category */
+.proverb-card:nth-child(1) .proverb-icon::before { content: "\f57d"; } /* Africa */
+.proverb-card:nth-child(2) .proverb-icon::before { content: "\f56e"; } /* Chinese */
+.proverb-card:nth-child(3) .proverb-icon::before { content: "\f51b"; } /* Japanese */
+.proverb-card:nth-child(4) .proverb-icon::before { content: "\f54f"; } /* Arabic */
+.proverb-card:nth-child(5) .proverb-icon::before { content: "\f759"; } /* Greek */
+.proverb-card:nth-child(6) .proverb-icon::before { content: "\f1bb"; } /* Native American */
+.proverb-card:nth-child(7) .proverb-icon::before { content: "\f64f"; } /* Indian */
+.proverb-card:nth-child(8) .proverb-icon::before { content: "\f1a3"; } /* Hawaiian */
+.proverb-card:nth-child(9) .proverb-icon::before { content: "\f1b2"; } /* Mexican */
+.proverb-card:nth-child(10) .proverb-icon::before { content: "\f0ac"; } /* Russian */
+.proverb-card:nth-child(11) .proverb-icon::before { content: "\f06c"; } /* Swahili */
+.proverb-card:nth-child(12) .proverb-icon::before { content: "\f6fc"; } /* Tibetan */
+
+/* Switch mode button icon */
+.switch-mode-btn .switch-icon {
+    font-size: 0; /* Hide the emoji */
+}
+
+.switch-mode-btn .switch-icon::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f544"; /* Robot icon */
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 8px;
+}
+    </style>
+</head>
+<body>
+   <!-- Main Container -->
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+         <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="logo-text">CulturalAI Educator</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="sidebar-nav">
+                <!-- Learn Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Learn</h3>
+                    <ul class="nav-list">
+              <li class="nav-item">
+                            <a href="dashboard.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                                <span class="nav-label">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="tribesAndEthnicGroups.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                                <span class="nav-label">Tribes & Ethnic Groups</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="historicalTimelines.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-history"></i></span>
+                                <span class="nav-label">Historical Timelines</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="folkloreAndMyths.html" class="nav-link">
+                             <span class="nav-icon"><i class="fas fa-book-open"></i></span>
+                                <span class="nav-label">Folklore & Myths</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proverbs.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-comment-dots"></i></span>
+                                <span class="nav-label">Proverbs & Sayings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="languages.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-language"></i></span>
+                                <span class="nav-label">Languages & Phrases</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Engage Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Engage</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="quizzes.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-puzzle-piece"></i></span>
+                                <span class="nav-label">Quizzes & Challenges</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="saved.html" class="nav-link">
+                                <span class="nav-icon"><i class="fas fa-save"></i></span>
+                                <span class="nav-label">Saved Content</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="nav-section">
+                    <h3 class="section-header">Settings</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="settings.html" class="nav-link">
+                                  <span class="nav-icon"><i class="fas fa-cog"></i></span>
+                                <span class="nav-label">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Voice Input Button -->
+            <div class="voice-input-container">
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon"><i class="fas fa-microphone"></i></span>
+                    <span class="voice-label">Voice Input</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <h1 class="page-title">Proverbs & Sayings</h1>
+                </div>
+                <div class="header-right">
+                    <button class="switch-mode-btn" onclick="window.location.href='assistant.html'">
+                        <span class="switch-icon">💬</span>
+                        <span class="switch-label">Switch to Assistant</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Body -->
+            <div class="content-body">
+                <div class="section-header-content">
+                    <h2>Proverbs & Sayings</h2>
+                    <p>Discover wisdom from cultures around the world through traditional proverbs and sayings.</p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="proverb-card">
+                        <h3>Patience and Caution</h3>
+                        <div class="proverb-text">"The chameleon looks in both directions before it moves"</div>
+                        <div class="proverb-meaning">Patience and caution lead to safety.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Self-Confidence</h3>
+                        <div class="proverb-text">"When the cock crown,the sun is not afraid to rise"</div>
+                        <div class="proverb-meaning">Do not let others dictate your destiny.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Gratitude and Origins</h3>
+                        <div class="proverb-text">"The river does not forget its source"</div>
+                        <div class="proverb-meaning">Always remember your origins.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Strong Foundations</h3>
+                        <div class="proverb-text">"When the roots of a tree decay,the branches will fall"</div>
+                        <div class="proverb-meaning">Weak foundation lead to downfall.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Respecting Experience</h3>
+                        <div class="proverb-text">"One does not show the road to the one who known it"</div>
+                        <div class="proverb-meaning">Respect the wisdom of experience.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Time and Opportunity</h3>
+                        <div class="proverb-text">"A canoe deos not travel twice in the same water."</div>
+                        <div class="proverb-meaning">Time passes;opportunity don't repeat exactly</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                       
+                        <h3>Consequences of Choices</h3>
+                        <div class="proverb-text">"The one who fetches firewood with ants will cook with them."</div>
+                        <div class="proverb-meaning">Careless choices bring unpleasant results.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Speaking Up</h3>
+                        <div class="proverb-text">"A child who does not cry will die on this mother's back"</div>
+                        <div class="proverb-meaning">Speak up when in need.</div>
+                        <div class="proverb-meta">
+                           
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Staying connected to Roots</h3>
+                        <div class="proverb-text">"A tree cannot stand without its roots."</div>
+                        <div class="proverb-meaning">Stay connected to your communit and heritage.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                       <h3>Adaptability</h3>
+                        <div class="proverb-text">"When the drums beat, the feet must move."</div>
+                        <div class="proverb-meaning">adapt to the demands of the moment.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Teamwork</h3>
+                        <div class="proverb-text">"If you want to go fast,walk alone;if you want to go far,walk together."</div>
+                        <div class="proverb-meaning">Cooperation brings long-term success</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                    
+                    <div class="proverb-card">
+                        <h3>Hope</h3>
+                        <div class="proverb-text">"No matter how long the night,the day will surely come."</div>
+                        <div class="proverb-meaning">Hard times eventually pass.</div>
+                        <div class="proverb-meta">
+                            
+                        </div>
+                        <button class="explore-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <!-- Featured Collection -->
+                <div class="featured-collection">
+                    <h2>Featured Collection: Wisdom About Time</h2>
+                    <div class="collection-grid">
+                        <div class="collection-item">
+                            <div class="collection-quote">"Time is money"</div>
+                            <div class="collection-origin">English</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"Time and tide wait for no man"</div>
+                            <div class="collection-origin">English</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"El tiempo es oro"</div>
+                            <div class="collection-origin">Spanish</div>
+                        </div>
+                        <div class="collection-item">
+                            <div class="collection-quote">"時は金なり"</div>
+                            <div class="collection-origin">Japanese</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Voice Input Modal -->
+    <div class="voice-modal" id="voiceModal">
+        <div class="voice-modal-content">
+            <div class="voice-animation">
+                <div class="voice-circle"></div>
+                <div class="voice-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+            <h3>Listening...</h3>
+            <p>Ask me anything about cultures, traditions, or history</p>
+            <button class="close-voice-btn" id="closeVoiceBtn">Stop Listening</button>
+        </div>
+    </div>
+
+    <script src="js/educator.js"></script>
+</body>
+</html>
+
