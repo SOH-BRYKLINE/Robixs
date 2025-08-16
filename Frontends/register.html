@@ -18,7 +18,6 @@
             background: var(--gradient-warm);
             padding: 2rem 0;
         }
-        
         .auth-card {
             background: var(--white);
             border-radius: 20px;
@@ -28,39 +27,32 @@
             max-width: 500px;
             margin: 0 1rem;
         }
-        
         .auth-header {
             text-align: center;
             margin-bottom: 2rem;
         }
-        
         .auth-header h1 {
             color: var(--dark-brown);
             margin-bottom: 0.5rem;
         }
-        
         .auth-header p {
             color: var(--brown);
             margin: 0;
         }
-        
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
-        
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--brown);
         }
-        
         .form-input {
             width: 100%;
             padding: 15px;
@@ -70,13 +62,11 @@
             transition: all 0.3s ease;
             background-color: var(--light-gray);
         }
-        
         .form-input:focus {
             outline: none;
             border-color: var(--primary-green);
             background-color: var(--white);
         }
-        
         .form-select {
             width: 100%;
             padding: 15px;
@@ -87,18 +77,15 @@
             background-color: var(--light-gray);
             cursor: pointer;
         }
-        
         .form-select:focus {
             outline: none;
             border-color: var(--primary-green);
             background-color: var(--white);
         }
-        
         .password-strength {
             margin-top: 0.5rem;
             font-size: 0.8rem;
         }
-        
         .strength-bar {
             height: 4px;
             background: var(--cream);
@@ -106,18 +93,15 @@
             margin: 0.5rem 0;
             overflow: hidden;
         }
-        
         .strength-fill {
             height: 100%;
             transition: all 0.3s ease;
             border-radius: 2px;
         }
-        
         .strength-weak { background: #dc3545; width: 25%; }
         .strength-fair { background: #ffc107; width: 50%; }
         .strength-good { background: var(--orange); width: 75%; }
         .strength-strong { background: var(--primary-green); width: 100%; }
-        
         .terms-checkbox {
             display: flex;
             align-items: flex-start;
@@ -127,21 +111,17 @@
             color: var(--brown);
             line-height: 1.5;
         }
-        
         .terms-checkbox input[type="checkbox"] {
             margin-top: 0.25rem;
             transform: scale(1.2);
         }
-        
         .terms-checkbox a {
             color: var(--primary-green);
             font-weight: 600;
         }
-        
         .terms-checkbox a:hover {
             color: var(--orange);
         }
-        
         .auth-button {
             width: 100%;
             padding: 15px;
@@ -155,25 +135,21 @@
             transition: all 0.3s ease;
             margin-bottom: 1.5rem;
         }
-        
         .auth-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(126, 189, 58, 0.4);
         }
-        
         .auth-button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
-        
         .divider {
             text-align: center;
             margin: 2rem 0;
             position: relative;
             color: var(--gray);
         }
-        
         .divider::before {
             content: '';
             position: absolute;
@@ -183,18 +159,15 @@
             height: 1px;
             background: var(--cream);
         }
-        
         .divider span {
             background: var(--white);
             padding: 0 1rem;
         }
-        
         .social-login {
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
         }
-        
         .social-btn {
             flex: 1;
             padding: 12px;
@@ -212,27 +185,22 @@
             justify-content: center;
             gap: 0.5rem;
         }
-        
         .social-btn:hover {
             border-color: var(--primary-green);
             background: var(--light-gray);
         }
-        
         .auth-footer {
             text-align: center;
             color: var(--brown);
         }
-        
         .auth-footer a {
             color: var(--primary-green);
             font-weight: 600;
             text-decoration: none;
         }
-        
         .auth-footer a:hover {
             color: var(--orange);
         }
-        
         .back-home {
             position: absolute;
             top: 2rem;
@@ -245,36 +213,30 @@
             gap: 0.5rem;
             transition: color 0.3s ease;
         }
-        
         .back-home:hover {
             color: var(--primary-green);
         }
-        
         .benefits {
             background: var(--light-gray);
             border-radius: 10px;
             padding: 1.5rem;
             margin-bottom: 2rem;
         }
-        
         .benefits h4 {
             color: var(--dark-brown);
             margin-bottom: 1rem;
         }
-        
         .benefits ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
         .benefits li {
             padding: 0.25rem 0;
             color: var(--brown);
             position: relative;
             padding-left: 1.5rem;
         }
-        
         .benefits li::before {
             content: "✓";
             position: absolute;
@@ -282,39 +244,45 @@
             color: var(--primary-green);
             font-weight: bold;
         }
-        
         @media (max-width: 768px) {
             .auth-card {
                 padding: 2rem;
                 margin: 1rem;
             }
-            
             .back-home {
                 position: static;
                 margin-bottom: 2rem;
                 justify-content: center;
             }
-            
             .social-login {
                 flex-direction: column;
             }
-            
             .form-row {
                 grid-template-columns: 1fr;
             }
         }
     </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CulturalAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ...keep all your CSS styles as before... */
+    </style>
 </head>
 <body>
     <div class="auth-container">
         <a href="index.html" class="back-home">← Back to Home</a>
-        
         <div class="auth-card">
             <div class="auth-header">
                 <h1>Join CulturalAI</h1>
                 <p>Create your account and start exploring cultures</p>
             </div>
-            
             <div class="benefits">
                 <h4>What you'll get:</h4>
                 <ul>
@@ -324,40 +292,29 @@
                     <li>Community discussions and insights</li>
                 </ul>
             </div>
-            
-            <form id="register-form">
+            <form id="register-form" method="POST" action="/api/register">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="first-name" class="form-label"><i class="fas fa-user"></i> First Name</label>
-                        <input type="text" id="first-name" name="first-name" class="form-input" required placeholder="John">
+                        <input type="text" id="first-name" name="first_name" class="form-input" required placeholder="John">
                     </div>
                     <div class="form-group">
                         <label for="last-name" class="form-label"><i class="fas fa-user"></i> Last Name</label>
-                        <input type="text" id="last-name" name="last-name" class="form-input" required placeholder="Doe">
+                        <input type="text" id="last-name" name="last_name" class="form-input" required placeholder="Doe">
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label for="email" class="form-label"> <i class="fas fa-envelope"></i> Email Address</label>
                     <input type="email" id="email" name="email" class="form-input" required placeholder="john.doe@example.com">
                 </div>
-                
                 <div class="form-group">
                     <label for="password" class="form-label"> <i class="fas fa-lock"></i> Password</label>
                     <input type="password" id="password" name="password" class="form-input" required placeholder="Create a strong password">
-                    <div class="password-strength">
-                        <div class="strength-bar">
-                            <div class="strength-fill" id="strength-fill"></div>
-                        </div>
-                        <span id="strength-text">Password strength: </span>
-                    </div>
                 </div>
-                
                 <div class="form-group">
                     <label for="confirm-password" class="form-label"> <i class="fas fa-lock"></i> Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" class="form-input" required placeholder="Confirm your password">
+                    <input type="password" id="confirm-password" name="confirm_password" class="form-input" required placeholder="Confirm your password">
                 </div>
-                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="country" class="form-label"> <i class="fas fa-globe"></i> Country</label>
@@ -388,148 +345,42 @@
                         </select>
                     </div>
                 </div>
-                
                 <div class="terms-checkbox">
                     <input type="checkbox" id="terms" name="terms" required>
                     <label for="terms">
                         I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>. I also consent to receiving educational content and updates via email.
                     </label>
                 </div>
-                
                 <button type="submit" class="auth-button">Create Account</button>
             </form>
-            
             <div class="divider">
                 <span>or sign up with</span>
             </div>
-            
             <div class="social-login">
                 <a href="#" class="social-btn"><i class="fab fa-google"></i> Google</a>
                 <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="#" class="social-btn"><i class="fab fa-twitter"></i> Twitter</a>
             </div>
-            
             <div class="auth-footer">
                 Already have an account? <a href="login.html">Sign in here</a>
             </div>
         </div>
     </div>
-
-    <script src="js/main.js"></script>
     <script>
-        // Additional register-specific functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const registerForm = document.getElementById('register-form');
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirm-password');
-            const strengthFill = document.getElementById('strength-fill');
-            const strengthText = document.getElementById('strength-text');
-            
-            // Password strength checker
-            function checkPasswordStrength(password) {
-                let strength = 0;
-                let feedback = [];
-                
-                if (password.length >= 8) strength++;
-                else feedback.push('at least 8 characters');
-                
-                if (/[a-z]/.test(password)) strength++;
-                else feedback.push('lowercase letter');
-                
-                if (/[A-Z]/.test(password)) strength++;
-                else feedback.push('uppercase letter');
-                
-                if (/[0-9]/.test(password)) strength++;
-                else feedback.push('number');
-                
-                if (/[^A-Za-z0-9]/.test(password)) strength++;
-                else feedback.push('special character');
-                
-                return { strength, feedback };
-            }
-            
-            passwordInput.addEventListener('input', function() {
-                const password = this.value;
-                const result = checkPasswordStrength(password);
-                
-                // Update strength bar
-                strengthFill.className = 'strength-fill';
-                if (result.strength <= 1) {
-                    strengthFill.classList.add('strength-weak');
-                    strengthText.textContent = 'Password strength: Weak';
-                } else if (result.strength <= 2) {
-                    strengthFill.classList.add('strength-fair');
-                    strengthText.textContent = 'Password strength: Fair';
-                } else if (result.strength <= 3) {
-                    strengthFill.classList.add('strength-good');
-                    strengthText.textContent = 'Password strength: Good';
-                } else {
-                    strengthFill.classList.add('strength-strong');
-                    strengthText.textContent = 'Password strength: Strong';
-                }
-                
-                if (result.feedback.length > 0 && password.length > 0) {
-                    strengthText.textContent += ` (Need: ${result.feedback.join(', ')})`;
-                }
-            });
-            
-            // Form submission
-            if (registerForm) {
-                registerForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const password = passwordInput.value;
-                    const confirmPassword = confirmPasswordInput.value;
-                    
-                    if (password !== confirmPassword) {
-                        alert('Passwords do not match!');
-                        confirmPasswordInput.focus();
-                        return;
-                    }
-                    
-                    const result = checkPasswordStrength(password);
-                    if (result.strength < 3) {
-                        alert('Please choose a stronger password.');
-                        passwordInput.focus();
-                        return;
-                    }
-                    
-                    // Simulate registration process
-                    const submitBtn = this.querySelector('.auth-button');
-                    const originalText = submitBtn.textContent;
-                    
-                    submitBtn.textContent = 'Creating Account...';
-                    submitBtn.disabled = true;
-                    
-                    setTimeout(() => {
-                        alert('Registration successful! Please check your email to verify your account. For demo purposes, you would be redirected to the onboarding flow.');
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                });
-            }
-            
-            // Social registration handlers
-            document.querySelectorAll('.social-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const provider = this.textContent.trim().split(' ')[1];
-                    alert(${provider} registration will be implemented with OAuth integration.);
-                });
-            });
-            
-            // Real-time password confirmation
-            confirmPasswordInput.addEventListener('input', function() {
-                const password = passwordInput.value;
-                const confirmPassword = this.value;
-                
-                if (confirmPassword && password !== confirmPassword) {
-                    this.style.borderColor = '#dc3545';
-                } else {
-                    this.style.borderColor = var(--primary-green);
-                }
-            });
-        });
-    </script>
+document.getElementById("register-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    const response = await fetch("/api/register", { method: "POST", body: formData });
+    const result = await response.json();
+
+    if (result.success) {
+        alert(result.message);
+        window.location.href = "login.html"; // redirect after OK
+    } else {
+        alert(result.message);
+    }
+});
+</script>
+
 </body>
-</html>
