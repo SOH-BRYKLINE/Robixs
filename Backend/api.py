@@ -1,19 +1,33 @@
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, session, redirect, url_for
+from auth import auth_bp, init_db
 
 app = Flask(
     __name__,
-    static_folder='../Frontends',          # Serve static files from Frontends
-    static_url_path=''                     # So /index.html works
+    static_folder='../Frontends',
+    static_url_path=''
 )
+
+# Needed for sessions
+app.secret_key = "super-secret-key"  # ⚠️ change this to a secure random value
+
+# Register auth blueprint
+app.register_blueprint(auth_bp)
+
 
 @app.route('/')
 def home():
     return send_from_directory(app.static_folder, 'index.html')
 
+
 @app.route('/<path:filename>')
 def static_files(filename):
-    # Serve any file from Frontends (including css/styles.css)
+    # Public pages (index, register, login, features, css, js, etc.)
+    if filename.startswith("bot/"):  
+        # Any attempt to access /bot/* requires login
+        if 'user_id' not in session:
+            return redirect(url_for('static_files', filename='login.html'))
     return send_from_directory(app.static_folder, filename)
+
 
 @app.route('/api/features')
 def features():
@@ -33,8 +47,9 @@ def features():
             "description": "Get personalized cultural insights, travel recommendations, and cultural etiquette guidance.",
             "url": "/features.html#assistant"
         }
-        
     ])
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    init_db()  # Ensure DB initialized
+    app.run(host='0.0.0.0',debug=True)

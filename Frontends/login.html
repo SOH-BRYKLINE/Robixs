@@ -268,47 +268,23 @@
             </div>
         </div>
     </div>
+<script>
+document.getElementById("login-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
 
-    <script src="js/main.js"></script>
-    <script>
-        // Additional login-specific functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginForm = document.getElementById('login-form');
-            
-            if (loginForm) {
-                loginForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const email = this.querySelector('#email').value;
-                    const password = this.querySelector('#password').value;
-                    
-                    if (email && password) {
-                        // Simulate login process
-                        const submitBtn = this.querySelector('.auth-button');
-                        const originalText = submitBtn.textContent;
-                        
-                        submitBtn.textContent = 'Signing In...';
-                        submitBtn.disabled = true;
-                        
-                        setTimeout(() => {
-                            alert('Login functionality will be implemented with backend integration. For demo purposes, you would be redirected to the dashboard.');
-                            submitBtn.textContent = originalText;
-                            submitBtn.disabled = false;
-                        }, 2000);
-                    }
-                });
-            }
-            
-            // Social login handlers
-            document.querySelectorAll('.social-btn').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const provider = this.textContent.trim().split(' ')[1];
-                    alert(`${provider} login will be implemented with OAuth integration.`);
-                });
-            });
-        });
-    </script>
+    const response = await fetch("/api/login", { method: "POST", body: formData });
+    const result = await response.json();
+
+    if (result.success) {
+        alert(result.message);
+        window.location.href = "bot/dashboard.html"; // redirect to dashboard
+    } else {
+        alert(result.message);
+    }
+});
+</script>
+
 </body>
 </html>
 
